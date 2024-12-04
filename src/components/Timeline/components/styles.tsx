@@ -12,12 +12,6 @@ export const Container = styled(Box)<ContainerProps>`
     containerSide === "left" ? "flex-end" : "flex-start"};
 `;
 
-export const CardStyled = styled(Box)`
-  padding: 15px;
-  border-radius: 5px;
-  border: 2px solid black;
-`;
-
 export const CardArm = styled(Box)`
   height: 2px;
   width: 30px;
