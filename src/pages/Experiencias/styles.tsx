@@ -2,23 +2,25 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 
 export const Container = styled(Box)`
-  background: rgb(13, 20, 148);
+  min-height: 100vh;
+
+  background: rgb(25, 90, 166);
   background: -moz-linear-gradient(
-    130deg,
-    rgba(13, 20, 148, 1) 0%,
-    rgba(22, 124, 144, 1) 55%,
-    rgba(0, 212, 255, 1) 100%
+    0deg,
+    rgba(25, 90, 166, 1) 0%,
+    rgba(9, 59, 117, 1) 50%,
+    rgba(4, 42, 87, 1) 100%
   );
   background: -webkit-linear-gradient(
-    130deg,
-    rgba(13, 20, 148, 1) 0%,
-    rgba(22, 124, 144, 1) 55%,
-    rgba(0, 212, 255, 1) 100%
+    0deg,
+    rgba(25, 90, 166, 1) 0%,
+    rgba(9, 59, 117, 1) 50%,
+    rgba(4, 42, 87, 1) 100%
   );
   background: linear-gradient(
-    130deg,
-    rgba(13, 20, 148, 1) 0%,
-    rgba(22, 124, 144, 1) 55%,
-    rgba(0, 212, 255, 1) 100%
+    0deg,
+    rgba(25, 90, 166, 1) 0%,
+    rgba(9, 59, 117, 1) 50%,
+    rgba(4, 42, 87, 1) 100%
   );
 `;

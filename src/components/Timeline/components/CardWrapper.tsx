@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
-import { Box } from "@mui/material";
-import { Container, CardArm } from "./styles";
+import { Container, CardArm, CardContainer } from "./styles";
 
 interface CardWrapperProps {
   children: ReactNode;
@@ -14,7 +13,7 @@ export const CardWrapper: React.FC<CardWrapperProps> = ({
   return (
     <Container containerSide={containerSide}>
       {containerSide === "right" && <CardArm />}
-      <Box>{children}</Box>
+      <CardContainer>{children}</CardContainer>
       {containerSide === "left" && <CardArm />}
     </Container>
   );

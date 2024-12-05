@@ -17,9 +17,9 @@ export const experiencias: Experiencia[] = [
     },
     empresa: "Magna Sistemas",
     atividades: [
-      "Desenvolvimento da Solução de Gerenciamento de Fiscalização, sistema governamental da Secretaria Municipal das Subprefeituras para gestão de atividades de fiscalização em espaços urbanos.",
-      "Desenvolvimento do Remédio em Casa, sistema governamental da Secretaria Municipal da Saúde de São Paulo para entrega domiciliar de medicamentos.",
-      "Desenvolvimento do Portal do Servidor, sistema governamental da Secretaria de Agricultura e Abastecimento do Estado de São Paulo para controle de atividades dos servidores.",
+      "Solução de Gerenciamento de Fiscalização para gestão de atividades de fiscalização em espaços urbanos",
+      "Remédio em Casa para entrega domiciliar de medicamentos",
+      "Portal do Servidor para controle de atividades de funcionários",
     ],
   },
   {
@@ -30,7 +30,7 @@ export const experiencias: Experiencia[] = [
     },
     empresa: "Magna Sistemas",
     atividades: [
-      "Desenvolvimento do Gedave 2.0, sistema governamental da Secretaria de Agricultura e Abastecimento do Estado de São Paulo para controle de animais, plantas, produtos, doenças, pragas, agrotóxicos, eventos agropecuários e propriedades.",
+      "Gedave 2.0 para controle de animais, plantas, produtos, doenças, pragas, agrotóxicos, eventos agropecuários e propriedades",
     ],
   },
   {
@@ -41,8 +41,8 @@ export const experiencias: Experiencia[] = [
     },
     empresa: "Bambinno Comércio de Artigos Infantis Eireli",
     atividades: [
-      "Desenvolvimento de sistema para controle de estoque.",
-      "Desenvolvimento de sistema gerador de dashboard, KPIs e DREs.",
+      "Sistema para controle de estoque",
+      "Sistema gerador de dashboard, KPIs e DREs",
     ],
   },
   {
@@ -51,10 +51,10 @@ export const experiencias: Experiencia[] = [
       inicio: "04/2021",
       fim: "09/2021",
     },
-    empresa: "Bambinno Comércio de Artigos Infantis Eireli",
+    empresa: "Viaduto Soluções Logísticas",
     atividades: [
-      "Desenvolvimento de dashboards e KPIs.",
-      "Automatização do processo de elaborar propostas comerciais utilizando Excel VBA.",
+      "Dashboards e KPIs",
+      "Automatização do processo de elaborar propostas comerciais utilizando Excel VBA",
     ],
   },
 ];
