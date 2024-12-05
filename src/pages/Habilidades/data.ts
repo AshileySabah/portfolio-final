@@ -1,132 +1,186 @@
-export const habilidades = [
+import inglesAvancado from "../../assets/ingles-avancado.png";
+import react from "../../assets/react.png";
+import next from "../../assets/next.png";
+import angular from "../../assets/angular.png";
+import flutter from "../../assets/flutter.png";
+import express from "../../assets/express.png";
+import springBoot from "../../assets/spring-boot.png";
+import html from "../../assets/html.png";
+import javascript from "../../assets/javascript.png";
+import typescript from "../../assets/typescript.png";
+import dart from "../../assets/dart.png";
+import node from "../../assets/node.png";
+import java from "../../assets/java.png";
+import css from "../../assets/css.png";
+import sass from "../../assets/sass.png";
+import styledComponents from "../../assets/styled-components.png";
+import materialUI from "../../assets/material-ui.png";
+import tailwind from "../../assets/tailwind.png";
+import bootstrap from "../../assets/bootstrap.png";
+import sql from "../../assets/sql.png";
+import mongodb from "../../assets/mongodb.png";
+import mysql from "../../assets/mysql.png";
+import postgresql from "../../assets/postgresql.png";
+import firebase from "../../assets/firebase.png";
+import storybook from "../../assets/storybook.png";
+import swagger from "../../assets/swagger.png";
+import redux from "../../assets/redux.png";
+import zustand from "../../assets/zustand.png";
+import git from "../../assets/git.png";
+import jest from "../../assets/jest.png";
+import junit from "../../assets/junit.png";
+// import eslint from "../../assets/eslint.png";
+// import husky from "../../assets/husky.png";
+// import sonarqube from "../../assets/sonarqube.png";
+// import liderancaSquads from "../../assets/lideranca-de-squads.png";
+// import arquiteturaProjetos from "../../assets/arquitetura-de-projetos.png";
+// import gestaoTempo from "../../assets/gestao-de-tempo.png";
+// import planejamentoEstrategico from "../../assets/planejamento-estrategico.png";
+// import resolucaoProblemas from "../../assets/resolucao-de-problemas.png";
+// import colaboracaoEquipes from "../../assets/colaboracao-entre-equipes.png";
+// import propostasMelhorias from "../../assets/proposta-de-melhorias-tecnicas.png";
+// import visaoNegocios from "../../assets/visao-de-negocios.png";
+// import analiseProblemas from "../../assets/analise-e-antecipacao-de-problemas.png";
+
+export interface Habilidade {
+  descricao: string;
+  imagem: string;
+}
+
+export interface HabilidadePorNicho {
+  nicho: string;
+  habilidades: Habilidade[];
+}
+
+export const habilidadesPorNicho: HabilidadePorNicho[] = [
   {
     nicho: "Idiomas",
     habilidades: [
       {
         descricao: "Inglês avançado",
-        imagem: "../../assets/ingles-avancado.png",
+        imagem: inglesAvancado,
       },
     ],
   },
   {
     nicho: "Frameworks",
     habilidades: [
-      { descricao: "React", imagem: "../../assets/react.png" },
-      { descricao: "Next", imagem: "../../assets/next.png" },
-      { descricao: "Angular", imagem: "../../assets/angular.png" },
-      { descricao: "React Native", imagem: "../../assets/react-native.png" },
-      { descricao: "Flutter", imagem: "../../assets/flutter.png" },
-      { descricao: "Express", imagem: "../../assets/express.png" },
-      { descricao: "Spring Boot", imagem: "../../assets/spring-boot.png" },
+      { descricao: "React", imagem: react },
+      { descricao: "Next", imagem: next },
+      { descricao: "Angular", imagem: angular },
+      { descricao: "React Native", imagem: react },
+      { descricao: "Flutter", imagem: flutter },
+      { descricao: "Express", imagem: express },
+      { descricao: "Spring Boot", imagem: springBoot },
     ],
   },
   {
     nicho: "Linguagens",
     habilidades: [
-      { descricao: "HTML", imagem: "../../assets/html.png" },
-      { descricao: "JavaScript", imagem: "../../assets/javascript.png" },
-      { descricao: "TypeScript", imagem: "../../assets/typescript.png" },
-      { descricao: "Dart", imagem: "../../assets/dart.png" },
-      { descricao: "Node", imagem: "../../assets/node.png" },
-      { descricao: "Java", imagem: "../../assets/java.png" },
+      { descricao: "HTML", imagem: html },
+      { descricao: "JavaScript", imagem: javascript },
+      { descricao: "TypeScript", imagem: typescript },
+      { descricao: "Dart", imagem: dart },
+      { descricao: "Node", imagem: node },
+      { descricao: "Java", imagem: java },
     ],
   },
   {
     nicho: "Estilização",
     habilidades: [
-      { descricao: "CSS", imagem: "../../assets/css.png" },
-      { descricao: "SASS", imagem: "../../assets/sass.png" },
+      { descricao: "CSS", imagem: css },
+      { descricao: "SASS", imagem: sass },
       {
         descricao: "Styled Components",
-        imagem: "../../assets/styled-components.png",
+        imagem: styledComponents,
       },
-      { descricao: "Material UI", imagem: "../../assets/material-ui.png" },
-      { descricao: "Tailwind", imagem: "../../assets/tailwind.png" },
-      { descricao: "Bootstrap", imagem: "../../assets/bootstrap.png" },
+      { descricao: "Material UI", imagem: materialUI },
+      { descricao: "Tailwind", imagem: tailwind },
+      { descricao: "Bootstrap", imagem: bootstrap },
     ],
   },
   {
     nicho: "Banco de Dados",
     habilidades: [
-      { descricao: "SQL", imagem: "../../assets/sql.png" },
-      { descricao: "MongoDB", imagem: "../../assets/mongodb.png" },
-      { descricao: "MySQL", imagem: "../../assets/mysql.png" },
-      { descricao: "PostgreSQL", imagem: "../../assets/postgresql.png" },
-      { descricao: "Firebase", imagem: "../../assets/firebase.png" },
+      { descricao: "SQL", imagem: sql },
+      { descricao: "MongoDB", imagem: mongodb },
+      { descricao: "MySQL", imagem: mysql },
+      { descricao: "PostgreSQL", imagem: postgresql },
+      { descricao: "Firebase", imagem: firebase },
     ],
   },
   {
     nicho: "Documentação",
     habilidades: [
-      { descricao: "Storybook", imagem: "../../assets/storybook.png" },
-      { descricao: "Swagger", imagem: "../../assets/swagger.png" },
+      { descricao: "Storybook", imagem: storybook },
+      { descricao: "Swagger", imagem: swagger },
     ],
   },
   {
     nicho: "Gerenciador de Estados",
     habilidades: [
-      { descricao: "Redux", imagem: "../../assets/redux.png" },
-      { descricao: "Zustand", imagem: "../../assets/zustand.png" },
+      { descricao: "Redux", imagem: redux },
+      { descricao: "Zustand", imagem: zustand },
     ],
   },
   {
     nicho: "Controle de Versão",
-    habilidades: [{ descricao: "Git", imagem: "../../assets/git.png" }],
+    habilidades: [{ descricao: "Git", imagem: git }],
   },
   {
     nicho: "Teste",
     habilidades: [
-      { descricao: "Jest", imagem: "../../assets/jest.png" },
-      { descricao: "JUnit", imagem: "../../assets/junit.png" },
+      { descricao: "Jest", imagem: jest },
+      { descricao: "JUnit", imagem: junit },
     ],
   },
-  {
-    nicho: "Padrão e Qualidade",
-    habilidades: [
-      { descricao: "ESLint", imagem: "../../assets/eslint.png" },
-      { descricao: "Husky", imagem: "../../assets/husky.png" },
-      { descricao: "SonarQube", imagem: "../../assets/sonarqube.png" },
-    ],
-  },
-  {
-    nicho: "Gerência",
-    habilidades: [
-      {
-        descricao: "Liderança de squads",
-        imagem: "../../assets/lideranca-de-squads.png",
-      },
-      {
-        descricao: "Arquitetura de projetos",
-        imagem: "../../assets/arquitetura-de-projetos.png",
-      },
-      {
-        descricao: "Gestão de tempo",
-        imagem: "../../assets/gestao-de-tempo.png",
-      },
-      {
-        descricao: "Planejamento estratégico",
-        imagem: "../../assets/planejamento-estrategico.png",
-      },
-      {
-        descricao: "Resolução de problemas",
-        imagem: "../../assets/resolucao-de-problemas.png",
-      },
-      {
-        descricao: "Colaboração entre equipes",
-        imagem: "../../assets/colaboracao-entre-equipes.png",
-      },
-      {
-        descricao: "Proposta de melhorias técnicas",
-        imagem: "../../assets/proposta-de-melhorias-tecnicas.png",
-      },
-      {
-        descricao: "Visão de negócios",
-        imagem: "../../assets/visao-de-negocios.png",
-      },
-      {
-        descricao: "Análise e antecipação de problemas",
-        imagem: "../../assets/analise-e-antecipacao-de-problemas.png",
-      },
-    ],
-  },
+  // {
+  //   nicho: "Padrão e Qualidade",
+  //   habilidades: [
+  //     { descricao: "ESLint", imagem: eslint },
+  //     { descricao: "Husky", imagem: husky },
+  //     { descricao: "SonarQube", imagem: sonarqube },
+  //   ],
+  // },
+  // {
+  //   nicho: "Gerência",
+  //   habilidades: [
+  //     {
+  //       descricao: "Liderança de squads",
+  //       imagem: liderancaSquads,
+  //     },
+  //     {
+  //       descricao: "Arquitetura de projetos",
+  //       imagem: arquiteturaProjetos,
+  //     },
+  //     {
+  //       descricao: "Gestão de tempo",
+  //       imagem: gestaoTempo,
+  //     },
+  //     {
+  //       descricao: "Planejamento estratégico",
+  //       imagem: planejamentoEstrategico,
+  //     },
+  //     {
+  //       descricao: "Resolução de problemas",
+  //       imagem: resolucaoProblemas,
+  //     },
+  //     {
+  //       descricao: "Colaboração entre equipes",
+  //       imagem: colaboracaoEquipes,
+  //     },
+  //     {
+  //       descricao: "Proposta de melhorias técnicas",
+  //       imagem: propostasMelhorias,
+  //     },
+  //     {
+  //       descricao: "Visão de negócios",
+  //       imagem: visaoNegocios,
+  //     },
+  //     {
+  //       descricao: "Análise e antecipação de problemas",
+  //       imagem: analiseProblemas,
+  //     },
+  //   ],
+  // },
 ];
