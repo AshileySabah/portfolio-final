@@ -4,8 +4,8 @@ import { Grid } from "@mui/material";
 
 export const Home: React.FC = () => {
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12}>
+    <Grid container spacing={3} justifyContent="center">
+      <Grid item xs={12} sm={12} md={12} lg={10} xl={10}>
         <Habilidades />
         <Experiencias />
       </Grid>

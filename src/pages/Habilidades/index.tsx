@@ -3,7 +3,7 @@ import { HabilidadePorNicho, habilidadesPorNicho, NichoEnum } from "./data";
 import { Container, ContainerButtons, ContainerCards } from "./styles";
 import { Card } from "./components/Card";
 import { Button } from "./components/Button";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 export const Habilidades = () => {
   const [filteredList, setFilteredList] =
@@ -25,14 +25,19 @@ export const Habilidades = () => {
   return (
     <Container p={3}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} md={4} lg={3} xl={2}>
+        <Grid item xs={12} mb={2}>
+          <Typography variant="h2" align="center" letterSpacing={10}>
+            HABILIDADES
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={5} md={5} lg={4} xl={3}>
           <ContainerButtons>
             {Object?.values(NichoEnum)?.map((nicho) => {
               return <Button {...{ nicho, nichoFilter, setNichoFilter }} />;
             })}
           </ContainerButtons>
         </Grid>
-        <Grid item xs={12} sm={8} md={8} lg={9} xl={10}>
+        <Grid item xs={12} sm={7} md={7} lg={8} xl={9}>
           <ContainerCards>
             {filteredList?.map(({ nicho, habilidades }) => {
               return habilidades?.map((habilidade) => {
