@@ -6,9 +6,9 @@ import { routesPortal } from "./entities/portal";
 export const Routes = () => {
   return (
     <ReactRoutes>
-      <Route path="" element={<BaseLayout />}>
-        {buildRoute(routesPortal)}
-      </Route>
+      {/* <Route path="" element={<BaseLayout />}> */}
+      {buildRoute(routesPortal)}
+      {/* </Route> */}
     </ReactRoutes>
   );
 };
