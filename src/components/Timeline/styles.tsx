@@ -6,8 +6,10 @@ interface SideProps {
 }
 
 export const ContainerSide = styled(Grid)<SideProps>`
-  border-left: ${({ $side }) =>
-    $side === "right" ? "1px solid #ececec" : "none"};
+  border-left: ${({ $side, theme }) =>
+    $side === "right"
+      ? `1px solid ${theme?.palette?.secondary?.main}`
+      : "none"};
 
   ${({ theme }) => css`
     ${theme.breakpoints.down("md")} {

@@ -22,13 +22,13 @@ export const Container = styled(Box)<ContainerProps>`
 export const CardArm = styled(Box)`
   height: 1px;
   width: 30px;
-  background-color: #ececec;
+  background-color: ${({ theme }) => theme?.palette?.secondary?.main};
 
   ${({ theme }) => css`
     ${theme.breakpoints.down("md")} {
       display: none;
     }
-  `}
+  `};
 `;
 
 export const CardContainer = styled(Box)`
