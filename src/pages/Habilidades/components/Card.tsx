@@ -1,16 +1,26 @@
 import { Typography } from "@mui/material";
-import { Habilidade } from "../data";
-import { Container, ContainerImage } from "./styles";
+import { Habilidade, NichoEnum } from "../data";
+import {
+  Container,
+  ContainerImage,
+  ContainerMainContent,
+  ContainerNicho,
+} from "./styles";
 
-interface CardProps extends Habilidade {}
+interface CardProps extends Habilidade {
+  nicho: NichoEnum;
+}
 
-export const Card: React.FC<CardProps> = ({ descricao, imagem }) => {
+export const Card: React.FC<CardProps> = ({ descricao, imagem, nicho }) => {
   return (
     <Container>
-      <ContainerImage>
-        <img src={imagem} alt={`Ícone para a habilidade de ${descricao}`} />
-      </ContainerImage>
-      <Typography>{descricao}</Typography>
+      <ContainerMainContent>
+        <ContainerImage>
+          <img src={imagem} alt={`Ícone para a habilidade de ${descricao}`} />
+        </ContainerImage>
+        <Typography>{descricao}</Typography>
+      </ContainerMainContent>
+      <ContainerNicho>{nicho}</ContainerNicho>
     </Container>
   );
 };

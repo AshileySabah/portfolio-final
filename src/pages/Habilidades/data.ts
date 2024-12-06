@@ -47,14 +47,26 @@ export interface Habilidade {
   imagem: string;
 }
 
+export enum NichoEnum {
+  FRAMEWORK = "Framework",
+  LINGUAGEM = "Linguagem",
+  ESTILIZACAO = "Estilização",
+  BANCO_DE_DADOS = "Banco de Dados",
+  DOCUMENTACAO = "Documentação",
+  GERENCIADOR_DE_ESTADOS = "Gerenciador de Estados",
+  CI_CD = "CI/CD",
+  TESTE = "Teste",
+  IDIOMA = "Idioma",
+}
+
 export interface HabilidadePorNicho {
-  nicho: string;
+  nicho: NichoEnum;
   habilidades: Habilidade[];
 }
 
 export const habilidadesPorNicho: HabilidadePorNicho[] = [
   {
-    nicho: "Frameworks",
+    nicho: NichoEnum.FRAMEWORK,
     habilidades: [
       { descricao: "React", imagem: react },
       { descricao: "Next", imagem: next },
@@ -66,7 +78,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: "Linguagens",
+    nicho: NichoEnum.LINGUAGEM,
     habilidades: [
       { descricao: "HTML", imagem: html },
       { descricao: "JavaScript", imagem: javascript },
@@ -77,7 +89,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: "Estilização",
+    nicho: NichoEnum.ESTILIZACAO,
     habilidades: [
       { descricao: "CSS", imagem: css },
       { descricao: "SASS", imagem: sass },
@@ -91,7 +103,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: "Banco de Dados",
+    nicho: NichoEnum.BANCO_DE_DADOS,
     habilidades: [
       { descricao: "SQL", imagem: sql },
       { descricao: "MongoDB", imagem: mongodb },
@@ -101,32 +113,32 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: "Documentação",
+    nicho: NichoEnum.DOCUMENTACAO,
     habilidades: [
       { descricao: "Storybook", imagem: storybook },
       { descricao: "Swagger", imagem: swagger },
     ],
   },
   {
-    nicho: "Gerenciador de Estados",
+    nicho: NichoEnum.GERENCIADOR_DE_ESTADOS,
     habilidades: [
       { descricao: "Redux", imagem: redux },
       { descricao: "Zustand", imagem: zustand },
     ],
   },
   {
-    nicho: "Controle de Versão",
+    nicho: NichoEnum.CI_CD,
     habilidades: [{ descricao: "Git", imagem: git }],
   },
   {
-    nicho: "Teste",
+    nicho: NichoEnum.TESTE,
     habilidades: [
       { descricao: "Jest", imagem: jest },
       { descricao: "JUnit", imagem: junit },
     ],
   },
   {
-    nicho: "Idiomas",
+    nicho: NichoEnum.IDIOMA,
     habilidades: [
       {
         descricao: "Inglês avançado",
