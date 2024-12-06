@@ -13,7 +13,7 @@ export const Title = styled(Typography)`
   ${({ theme }) => css`
     ${theme.breakpoints.up("xs")} {
       letter-spacing: 6px !important;
-      font-size: 18px !important;
+      font-size: 21px !important;
     }
   `};
 

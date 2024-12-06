@@ -28,9 +28,11 @@ export const Habilidades = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5} md={5} lg={4} xl={3}>
           <ContainerButtons>
-            {Object?.values(NichoEnum)?.map((nicho) => {
-              return <Button {...{ nicho, nichoFilter, setNichoFilter }} />;
-            })}
+            {Object?.values(NichoEnum)
+              ?.sort()
+              ?.map?.((nicho) => {
+                return <Button {...{ nicho, nichoFilter, setNichoFilter }} />;
+              })}
           </ContainerButtons>
         </Grid>
         <Grid item xs={12} sm={7} md={7} lg={8} xl={9}>
