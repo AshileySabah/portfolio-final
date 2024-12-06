@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const ContainerCards = styled("div")`
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 15px;
 `;
 

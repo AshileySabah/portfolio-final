@@ -11,7 +11,6 @@ export const Container = styled(Paper)`
   -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
-  width: 110px;
   height: 110px;
 
   display: flex;
