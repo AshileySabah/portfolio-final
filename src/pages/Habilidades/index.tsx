@@ -5,6 +5,7 @@ import { Card } from "./components/Card";
 import { Button } from "./components/Button";
 import { Grid } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
+import { Carousel } from "@/components/Carousel";
 
 export const Habilidades = () => {
   const [filteredList, setFilteredList] =
@@ -26,6 +27,17 @@ export const Habilidades = () => {
   return (
     <PageLayout section="Habilidades">
       <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Carousel
+            list={habilidadesPorNicho}
+            labelProperty="nicho"
+            contentListProperty="habilidades"
+            componentToRender={(item) => (
+              <img src={item?.imagem} alt={item?.descricao} height={40} />
+            )}
+          />
+        </Grid>
+
         <Grid item xs={12} sm={5} md={5} lg={4} xl={3}>
           <ContainerButtons>
             {Object?.values(NichoEnum)
@@ -42,7 +54,6 @@ export const Habilidades = () => {
                 return (
                   <Card
                     {...habilidade}
-                    {...{ nicho }}
                     fadeOut={nichoFilter !== null && nichoFilter !== nicho}
                   />
                 );

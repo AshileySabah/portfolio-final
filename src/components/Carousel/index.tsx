@@ -1,4 +1,4 @@
-import * as React from "react";
+import eact, { ReactNode } from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -7,32 +7,26 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import React from "react";
 
-const steps = [
-  {
-    label: "Select campaign settings",
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: "Create an ad group",
-    description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
-  },
-  {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-  },
-];
+interface CarouselProps {
+  list: any[];
+  labelProperty: string;
+  contentProperty?: string;
+  contentListProperty?: string;
+  componentToRender?: (item: any) => ReactNode;
+}
 
-export const Carousel = () => {
+export const Carousel: React.FC<CarouselProps> = ({
+  list,
+  labelProperty,
+  contentProperty,
+  contentListProperty,
+  componentToRender = () => null,
+}) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = steps.length;
+  const maxSteps = list?.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -56,10 +50,25 @@ export const Carousel = () => {
           color: "white",
         }}
       >
-        <Typography>{steps[activeStep].label}</Typography>
+        <Typography>{list?.[activeStep]?.[labelProperty]}</Typography>
       </Paper>
-      <Box sx={{ height: 255, width: "100%", p: 2 }}>
-        {steps[activeStep].description}
+      <Box
+        sx={{
+          minHeight: 255,
+          width: "100%",
+          p: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        {contentProperty && list?.[activeStep]?.[contentProperty]}
+        {contentListProperty &&
+          list?.[activeStep]?.[contentListProperty]?.map((item: any) => {
+            return componentToRender(item);
+          })}
       </Box>
       <MobileStepper
         variant="dots"
