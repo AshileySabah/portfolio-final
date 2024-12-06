@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { HabilidadePorNicho, habilidadesPorNicho, NichoEnum } from "./data";
-import { Container, ContainerButtons, ContainerCards } from "./styles";
+import { ContainerButtons, ContainerCards } from "./styles";
 import { Card } from "./components/Card";
 import { Button } from "./components/Button";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
+import { PageLayout } from "@/components/PageLayout";
 
 export const Habilidades = () => {
   const [filteredList, setFilteredList] =
@@ -23,13 +24,8 @@ export const Habilidades = () => {
   }, [nichoFilter]);
 
   return (
-    <Container p={3}>
+    <PageLayout section="Habilidades">
       <Grid container spacing={2}>
-        <Grid item xs={12} mb={2}>
-          <Typography variant="h2" align="center" letterSpacing={10}>
-            HABILIDADES
-          </Typography>
-        </Grid>
         <Grid item xs={12} sm={5} md={5} lg={4} xl={3}>
           <ContainerButtons>
             {Object?.values(NichoEnum)?.map((nicho) => {
@@ -53,6 +49,6 @@ export const Habilidades = () => {
           </ContainerCards>
         </Grid>
       </Grid>
-    </Container>
+    </PageLayout>
   );
 };
