@@ -1,17 +1,24 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { HabilidadePorNicho, habilidadesPorNicho, NichoEnum } from "./data";
 import { Container } from "./styles";
 import { Card } from "./components/Card";
 
 export const Habilidades = () => {
+  const [filteredList, setFilteredList] =
+    useState<HabilidadePorNicho[]>(habilidadesPorNicho);
   const [nichoFilter, setNichoFilter] = useState<NichoEnum | null>(null);
 
-  const filteredList: HabilidadePorNicho[] = useMemo(() => {
+  useEffect(() => {
     if (nichoFilter !== null) {
-      return habilidadesPorNicho?.filter(({ nicho }) => nicho === nichoFilter);
+      setTimeout(() => {
+        setFilteredList(
+          habilidadesPorNicho?.filter(({ nicho }) => nicho === nichoFilter),
+        );
+      }, 700);
+    } else {
+      setFilteredList(habilidadesPorNicho);
     }
-    return habilidadesPorNicho;
   }, [nichoFilter]);
 
   return (
@@ -134,7 +141,13 @@ export const Habilidades = () => {
       <div style={{ display: "flex", flexWrap: "wrap", gap: 15 }}>
         {filteredList?.map(({ nicho, habilidades }) => {
           return habilidades?.map((habilidade) => {
-            return <Card {...habilidade} {...{ nicho }} />;
+            return (
+              <Card
+                {...habilidade}
+                {...{ nicho }}
+                fadeOut={nichoFilter !== null && nichoFilter !== nicho}
+              />
+            );
           });
         })}
       </div>

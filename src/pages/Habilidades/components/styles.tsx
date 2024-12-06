@@ -11,12 +11,27 @@ export const Container = styled(Paper)`
   -moz-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
   box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
 
-  width: 120px;
-  height: 140px;
+  width: 110px;
+  height: 110px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &.fade-out-animation {
+    animation: fadeOut 1s forwards;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 `;
 
 export const ContainerMainContent = styled(Box)`
@@ -38,11 +53,4 @@ export const ContainerImage = styled(Box)`
   img {
     height: 40px;
   }
-`;
-
-export const ContainerNicho = styled(Box)`
-  line-height: 1em;
-  padding: 4px 0;
-  background-color: #d3d3d3;
-  font-size: 0.9em;
 `;
