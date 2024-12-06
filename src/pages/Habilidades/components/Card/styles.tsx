@@ -7,9 +7,9 @@ export const Container = styled(Paper)`
   background-color: ${({ theme }) => theme?.palette?.common?.white};
   text-align: center;
 
-  -webkit-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
-  -moz-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
-  box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
+  -webkit-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
+  -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
   width: 110px;
   height: 110px;
@@ -19,7 +19,7 @@ export const Container = styled(Paper)`
   justify-content: space-between;
 
   &.fade-out-animation {
-    animation: fadeOut 1s forwards;
+    animation: fadeOut 0.6s forwards;
   }
 
   @keyframes fadeOut {

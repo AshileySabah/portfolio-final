@@ -141,7 +141,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     nicho: NichoEnum.IDIOMA,
     habilidades: [
       {
-        descricao: "Inglês avançado",
+        descricao: "Inglês Avançado",
         imagem: inglesAvancado,
       },
     ],

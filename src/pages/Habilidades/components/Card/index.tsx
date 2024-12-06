@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { Habilidade } from "../data";
+import { Habilidade } from "../../data";
 import { Container, ContainerImage, ContainerMainContent } from "./styles";
 
 interface CardProps extends Habilidade {
