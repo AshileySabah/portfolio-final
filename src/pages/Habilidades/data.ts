@@ -54,15 +54,6 @@ export interface HabilidadePorNicho {
 
 export const habilidadesPorNicho: HabilidadePorNicho[] = [
   {
-    nicho: "Idiomas",
-    habilidades: [
-      {
-        descricao: "Inglês avançado",
-        imagem: inglesAvancado,
-      },
-    ],
-  },
-  {
     nicho: "Frameworks",
     habilidades: [
       { descricao: "React", imagem: react },
@@ -132,6 +123,15 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     habilidades: [
       { descricao: "Jest", imagem: jest },
       { descricao: "JUnit", imagem: junit },
+    ],
+  },
+  {
+    nicho: "Idiomas",
+    habilidades: [
+      {
+        descricao: "Inglês avançado",
+        imagem: inglesAvancado,
+      },
     ],
   },
   // {

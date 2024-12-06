@@ -8,11 +8,7 @@ export const Card: React.FC<CardProps> = ({ descricao, imagem }) => {
   return (
     <Container>
       <ContainerImage>
-        <img
-          src={imagem}
-          alt={`Ícone para a habilidade de ${descricao}`}
-          width={40}
-        />
+        <img src={imagem} alt={`Ícone para a habilidade de ${descricao}`} />
       </ContainerImage>
       <Typography>{descricao}</Typography>
     </Container>

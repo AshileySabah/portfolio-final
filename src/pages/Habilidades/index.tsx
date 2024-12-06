@@ -9,17 +9,15 @@ export const Habilidades = () => {
       <Grid container spacing={2}>
         {habilidadesPorNicho?.map(({ nicho, habilidades }) => {
           return (
-            <Grid item xs={12}>
-              <Typography>{nicho}</Typography>
-              <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Typography color="white" fontSize={20} fontWeight="bold">
+                {nicho}
+              </Typography>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 15 }}>
                 {habilidades?.map((habilidade) => {
-                  return (
-                    <Grid item xs={12} sm={3} md={2} lg={1.5} xl={0.8}>
-                      <Card {...habilidade} />
-                    </Grid>
-                  );
+                  return <Card {...habilidade} />;
                 })}
-              </Grid>
+              </div>
             </Grid>
           );
         })}

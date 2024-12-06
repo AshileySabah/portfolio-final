@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Box, Paper } from "@mui/material";
 
 export const Container = styled(Paper)`
@@ -8,16 +8,21 @@ export const Container = styled(Paper)`
   background-color: ${({ theme }) => theme?.palette?.common?.white};
   text-align: center;
 
+  -webkit-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
+  -moz-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
+  box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  min-width: 120px;
+  width: 120px;
+  height: 130px;
 
-  -webkit-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
-  -moz-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
-  box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 1) !important;
+  img {
+    height: 40px;
+  }
 `;
 
 export const ContainerImage = styled(Box)`
