@@ -29,9 +29,9 @@ import zustand from "../../assets/zustand.png";
 import git from "../../assets/git.png";
 import jest from "../../assets/jest.png";
 import junit from "../../assets/junit.png";
-// import eslint from "../../assets/eslint.png";
-// import husky from "../../assets/husky.png";
-// import sonarqube from "../../assets/sonarqube.png";
+import eslint from "../../assets/eslint.png";
+import husky from "../../assets/husky.png";
+import sonarqube from "../../assets/sonarqube.png";
 // import liderancaSquads from "../../assets/lideranca-de-squads.png";
 // import arquiteturaProjetos from "../../assets/arquitetura-de-projetos.png";
 // import gestaoTempo from "../../assets/gestao-de-tempo.png";
@@ -57,6 +57,7 @@ export enum NichoEnum {
   CI_CD = "CI/CD",
   TESTE = "Teste",
   IDIOMA = "Idioma",
+  PADRAO_E_QUALIDADE = "Padrão e Qualidade",
 }
 
 export interface HabilidadePorNicho {
@@ -146,14 +147,14 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
       },
     ],
   },
-  // {
-  //   nicho: "Padrão e Qualidade",
-  //   habilidades: [
-  //     { descricao: "ESLint", imagem: eslint },
-  //     { descricao: "Husky", imagem: husky },
-  //     { descricao: "SonarQube", imagem: sonarqube },
-  //   ],
-  // },
+  {
+    nicho: NichoEnum.PADRAO_E_QUALIDADE,
+    habilidades: [
+      { descricao: "ESLint", imagem: eslint },
+      { descricao: "Husky", imagem: husky },
+      { descricao: "SonarQube", imagem: sonarqube },
+    ],
+  },
   // {
   //   nicho: "Gerência",
   //   habilidades: [
