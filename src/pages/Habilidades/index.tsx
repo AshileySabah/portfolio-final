@@ -1,17 +1,24 @@
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
-import { HabilidadesMobile } from "./components/Mobile";
-import { HabilidadesDesktop } from "./components/Desktop";
+import { NichoHabilidadeEnum } from "./data";
+import { Card } from "./components/Card";
 
 export const Habilidades = () => {
   return (
     <PageLayout section="Habilidades">
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
-        <HabilidadesMobile />
-      </Box>
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
-        <HabilidadesDesktop />
-      </Box>
+      <Grid container spacing={2}>
+        {Object?.keys(NichoHabilidadeEnum)?.map((nichoHabilidadeEnum) => {
+          return (
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+              <Card
+                nichoHabilidadeEnum={
+                  nichoHabilidadeEnum as keyof typeof NichoHabilidadeEnum
+                }
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
     </PageLayout>
   );
 };

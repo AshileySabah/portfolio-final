@@ -38,13 +38,14 @@ import arquiteturaProjetos from "../../assets/arquiteturaProjetos.png";
 import resolucaoProblemas from "../../assets/resolucaoProblemas.png";
 import colaboracaoEquipes from "../../assets/colaboracaoEquipes.png";
 import visaoNegocios from "../../assets/visaoNegocios.png";
+import googleCloudPlatform from "../../assets/googleCloudPlatform.png";
 
 export interface Habilidade {
   descricao: string;
   imagem: string;
 }
 
-export enum NichoEnum {
+export enum NichoHabilidadeEnum {
   FRAMEWORK = "Framework",
   LINGUAGEM = "Linguagem",
   ESTILIZACAO = "Estilização",
@@ -56,16 +57,17 @@ export enum NichoEnum {
   IDIOMA = "Idioma",
   PADRAO_E_QUALIDADE = "Padrão e Qualidade",
   ARQUITETURA_GESTAO_E_LIDERANCA = "Arquitetura, Gestão e Liderança",
+  CLOUD_COMPUTING = "Cloud Computing",
 }
 
 export interface HabilidadePorNicho {
-  nicho: NichoEnum;
+  nicho: NichoHabilidadeEnum;
   habilidades: Habilidade[];
 }
 
 export const habilidadesPorNicho: HabilidadePorNicho[] = [
   {
-    nicho: NichoEnum.FRAMEWORK,
+    nicho: NichoHabilidadeEnum.FRAMEWORK,
     habilidades: [
       { descricao: "React", imagem: react },
       { descricao: "Next", imagem: next },
@@ -77,7 +79,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.LINGUAGEM,
+    nicho: NichoHabilidadeEnum.LINGUAGEM,
     habilidades: [
       { descricao: "HTML", imagem: html },
       { descricao: "JavaScript", imagem: javascript },
@@ -88,7 +90,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.ESTILIZACAO,
+    nicho: NichoHabilidadeEnum.ESTILIZACAO,
     habilidades: [
       { descricao: "CSS", imagem: css },
       { descricao: "SASS", imagem: sass },
@@ -102,7 +104,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.BANCO_DE_DADOS,
+    nicho: NichoHabilidadeEnum.BANCO_DE_DADOS,
     habilidades: [
       { descricao: "SQL", imagem: sql },
       { descricao: "MongoDB", imagem: mongodb },
@@ -112,32 +114,32 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.DOCUMENTACAO,
+    nicho: NichoHabilidadeEnum.DOCUMENTACAO,
     habilidades: [
       { descricao: "Storybook", imagem: storybook },
       { descricao: "Swagger", imagem: swagger },
     ],
   },
   {
-    nicho: NichoEnum.GERENCIADOR_DE_ESTADOS,
+    nicho: NichoHabilidadeEnum.GERENCIADOR_DE_ESTADOS,
     habilidades: [
       { descricao: "Redux", imagem: redux },
       { descricao: "Zustand", imagem: zustand },
     ],
   },
   {
-    nicho: NichoEnum.CI_CD,
+    nicho: NichoHabilidadeEnum.CI_CD,
     habilidades: [{ descricao: "Git", imagem: git }],
   },
   {
-    nicho: NichoEnum.TESTE,
+    nicho: NichoHabilidadeEnum.TESTE,
     habilidades: [
       { descricao: "Jest", imagem: jest },
       { descricao: "JUnit", imagem: junit },
     ],
   },
   {
-    nicho: NichoEnum.IDIOMA,
+    nicho: NichoHabilidadeEnum.IDIOMA,
     habilidades: [
       {
         descricao: "Inglês Avançado",
@@ -146,7 +148,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.PADRAO_E_QUALIDADE,
+    nicho: NichoHabilidadeEnum.PADRAO_E_QUALIDADE,
     habilidades: [
       { descricao: "ESLint", imagem: eslint },
       { descricao: "Husky", imagem: husky },
@@ -155,7 +157,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
     ],
   },
   {
-    nicho: NichoEnum.ARQUITETURA_GESTAO_E_LIDERANCA,
+    nicho: NichoHabilidadeEnum.ARQUITETURA_GESTAO_E_LIDERANCA,
     habilidades: [
       {
         descricao: "Liderança de Squads",
@@ -176,6 +178,15 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
       {
         descricao: "Visão de negócios",
         imagem: visaoNegocios,
+      },
+    ],
+  },
+  {
+    nicho: NichoHabilidadeEnum.CLOUD_COMPUTING,
+    habilidades: [
+      {
+        descricao: "Google Cloud Platform",
+        imagem: googleCloudPlatform,
       },
     ],
   },
