@@ -11,7 +11,7 @@ export const Solucoes = () => {
           <Grid container spacing={2}>
             {solucoes?.map((solucao) => {
               return (
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={4}>
+                <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
                   <Card {...solucao} />
                 </Grid>
               );
