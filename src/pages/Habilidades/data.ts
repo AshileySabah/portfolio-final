@@ -32,15 +32,11 @@ import junit from "../../assets/junit.png";
 import eslint from "../../assets/eslint.png";
 import husky from "../../assets/husky.png";
 import sonarqube from "../../assets/sonarqube.png";
-// import liderancaSquads from "../../assets/lideranca-de-squads.png";
-// import arquiteturaProjetos from "../../assets/arquitetura-de-projetos.png";
-// import gestaoTempo from "../../assets/gestao-de-tempo.png";
-// import planejamentoEstrategico from "../../assets/planejamento-estrategico.png";
-// import resolucaoProblemas from "../../assets/resolucao-de-problemas.png";
-// import colaboracaoEquipes from "../../assets/colaboracao-entre-equipes.png";
-// import propostasMelhorias from "../../assets/proposta-de-melhorias-tecnicas.png";
-// import visaoNegocios from "../../assets/visao-de-negocios.png";
-// import analiseProblemas from "../../assets/analise-e-antecipacao-de-problemas.png";
+import liderancaSquads from "../../assets/liderancaSquads.png";
+import arquiteturaProjetos from "../../assets/arquiteturaProjetos.png";
+import resolucaoProblemas from "../../assets/resolucaoProblemas.png";
+import colaboracaoEquipes from "../../assets/colaboracaoEquipes.png";
+import visaoNegocios from "../../assets/visaoNegocios.png";
 
 export interface Habilidade {
   descricao: string;
@@ -58,6 +54,7 @@ export enum NichoEnum {
   TESTE = "Teste",
   IDIOMA = "Idioma",
   PADRAO_E_QUALIDADE = "Padrão e Qualidade",
+  ARQUITETURA_GESTAO_E_LIDERANCA = "Arquitetura, Gestão e Liderança",
 }
 
 export interface HabilidadePorNicho {
@@ -155,45 +152,29 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
       { descricao: "SonarQube", imagem: sonarqube },
     ],
   },
-  // {
-  //   nicho: "Gerência",
-  //   habilidades: [
-  //     {
-  //       descricao: "Liderança de squads",
-  //       imagem: liderancaSquads,
-  //     },
-  //     {
-  //       descricao: "Arquitetura de projetos",
-  //       imagem: arquiteturaProjetos,
-  //     },
-  //     {
-  //       descricao: "Gestão de tempo",
-  //       imagem: gestaoTempo,
-  //     },
-  //     {
-  //       descricao: "Planejamento estratégico",
-  //       imagem: planejamentoEstrategico,
-  //     },
-  //     {
-  //       descricao: "Resolução de problemas",
-  //       imagem: resolucaoProblemas,
-  //     },
-  //     {
-  //       descricao: "Colaboração entre equipes",
-  //       imagem: colaboracaoEquipes,
-  //     },
-  //     {
-  //       descricao: "Proposta de melhorias técnicas",
-  //       imagem: propostasMelhorias,
-  //     },
-  //     {
-  //       descricao: "Visão de negócios",
-  //       imagem: visaoNegocios,
-  //     },
-  //     {
-  //       descricao: "Análise e antecipação de problemas",
-  //       imagem: analiseProblemas,
-  //     },
-  //   ],
-  // },
+  {
+    nicho: NichoEnum.ARQUITETURA_GESTAO_E_LIDERANCA,
+    habilidades: [
+      {
+        descricao: "Liderança de Squads",
+        imagem: liderancaSquads,
+      },
+      {
+        descricao: "Arquitetura de Projetos",
+        imagem: arquiteturaProjetos,
+      },
+      {
+        descricao: "Resolução de problemas",
+        imagem: resolucaoProblemas,
+      },
+      {
+        descricao: "Colaboração entre equipes",
+        imagem: colaboracaoEquipes,
+      },
+      {
+        descricao: "Visão de negócios",
+        imagem: visaoNegocios,
+      },
+    ],
+  },
 ];
