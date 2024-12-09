@@ -54,7 +54,7 @@ export const experiencias: Experiencia[] = [
     empresa: "Viaduto Soluções Logísticas",
     atividades: [
       "Dashboards e KPIs",
-      "Automatização do processo de elaborar propostas comerciais utilizando Excel VBA",
+      "Automatização do processo de elaborar propostas comerciais",
     ],
   },
 ];

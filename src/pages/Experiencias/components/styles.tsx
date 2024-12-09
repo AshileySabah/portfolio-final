@@ -51,15 +51,15 @@ export const Container = styled(Paper)`
 
   ${({ theme }) => css`
     ${theme.breakpoints.up("md")} {
-      width: 440px;
+      width: 400px;
     }
 
     ${theme.breakpoints.up("lg")} {
-      width: 480px;
+      width: 450px;
     }
 
     ${theme.breakpoints.up("xl")} {
-      width: 530px;
+      width: 550px;
     }
 
     ${theme.breakpoints.down("md")} {
