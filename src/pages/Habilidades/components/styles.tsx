@@ -44,8 +44,16 @@ export const CardFace = styled.div`
 
 export const CardFront = styled(CardFace)`
   font-weight: bold;
+
+  &:hover {
+    color: #2ea103;
+  }
 `;
 
 export const CardBack = styled(CardFace)`
   transform: rotateY(180deg);
+
+  padding: 15px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
