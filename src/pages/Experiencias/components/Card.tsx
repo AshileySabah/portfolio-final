@@ -7,13 +7,11 @@ interface CardProps extends Experiencia {}
 export const Card: React.FC<CardProps> = (experiencia) => {
   return (
     <Container>
-      <Typography>
-        <strong>{experiencia?.cargo?.toUpperCase()}</strong> •{" "}
+      <Typography className="card-cargo">{experiencia?.cargo}</Typography>
+      <Typography className="card-periodo">
         {experiencia?.data?.inicio} - {experiencia?.data?.fim}
       </Typography>
-      <Typography>
-        <strong>{experiencia?.empresa}</strong>
-      </Typography>
+      <Typography className="card-empresa">{experiencia?.empresa}</Typography>
       <ul>
         {experiencia?.atividades?.map((atividade) => {
           return <li>{atividade}</li>;

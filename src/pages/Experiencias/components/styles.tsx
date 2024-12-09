@@ -12,9 +12,40 @@ export const Container = styled(Paper)`
   -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
+  .card-cargo {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .card-periodo {
+    color: ${({ theme }) => theme?.palette?.grey?.[600]} !important;
+  }
+
+  .card-empresa {
+    font-weight: bold;
+  }
+
   ul {
     margin: 0;
-    padding: 0 0 0 15px;
+    padding: 0;
+    list-style: none;
+    position: relative;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 6px;
+        height: 6px;
+        background-color: #2ea103;
+        border-radius: 50%;
+      }
+    }
   }
 
   ${({ theme }) => css`
