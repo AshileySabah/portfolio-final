@@ -40,10 +40,11 @@ export const Container = styled(Paper)`
         position: absolute;
         left: 0;
         top: 0.5em;
-        width: 6px;
-        height: 6px;
-        background-color: #2ea103;
+        width: 7px;
+        height: 7px;
+        border: 1px solid #2ea103;
         border-radius: 50%;
+        background-color: transparent;
       }
     }
   }
