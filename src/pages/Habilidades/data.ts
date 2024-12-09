@@ -32,6 +32,7 @@ import junit from "../../assets/junit.png";
 import eslint from "../../assets/eslint.png";
 import husky from "../../assets/husky.png";
 import sonarqube from "../../assets/sonarqube.png";
+import docker from "../../assets/docker.png";
 import liderancaSquads from "../../assets/liderancaSquads.png";
 import arquiteturaProjetos from "../../assets/arquiteturaProjetos.png";
 import resolucaoProblemas from "../../assets/resolucaoProblemas.png";
@@ -150,6 +151,7 @@ export const habilidadesPorNicho: HabilidadePorNicho[] = [
       { descricao: "ESLint", imagem: eslint },
       { descricao: "Husky", imagem: husky },
       { descricao: "SonarQube", imagem: sonarqube },
+      { descricao: "Docker", imagem: docker },
     ],
   },
   {
