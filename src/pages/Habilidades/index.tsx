@@ -5,7 +5,7 @@ import { Card } from "./components/Card";
 
 export const Habilidades = () => {
   return (
-    <PageLayout section="Habilidades">
+    <PageLayout section="Tecnologias & Habilidades">
       <Grid container spacing={2}>
         {Object?.keys(NichoHabilidadeEnum)?.map((nichoHabilidadeEnum) => {
           return (

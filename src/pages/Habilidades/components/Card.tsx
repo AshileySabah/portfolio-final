@@ -1,17 +1,24 @@
-import { Typography } from "@mui/material";
+import { useState } from "react";
 import { NichoHabilidadeEnum } from "../data";
-import { Container } from "./styles";
+import { Container, CardFront, CardBack } from "./styles";
 
 interface CardProps {
   nichoHabilidadeEnum: keyof typeof NichoHabilidadeEnum;
 }
 
 export const Card: React.FC<CardProps> = ({ nichoHabilidadeEnum }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
-    <Container>
-      <Typography className="card-titulo">
-        {NichoHabilidadeEnum?.[nichoHabilidadeEnum]}
-      </Typography>
+    <Container $isFlipped={isFlipped} onClick={handleFlip}>
+      <CardFront>{NichoHabilidadeEnum?.[nichoHabilidadeEnum]}</CardFront>
+      <CardBack>
+        <p>Verso</p>
+      </CardBack>
     </Container>
   );
 };
