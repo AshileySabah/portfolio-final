@@ -1,5 +1,6 @@
 import { Experiencias } from "@/pages/Experiencias";
 import { Habilidades } from "@/pages/Habilidades";
+import { Solucoes } from "@/pages/Solucoes";
 import { Grid } from "@mui/material";
 
 export const Home: React.FC = () => {
@@ -8,6 +9,7 @@ export const Home: React.FC = () => {
       <Grid item xs={12} sm={12} md={12} lg={10} xl={10}>
         <Habilidades />
         <Experiencias />
+        <Solucoes />
       </Grid>
     </Grid>
   );
