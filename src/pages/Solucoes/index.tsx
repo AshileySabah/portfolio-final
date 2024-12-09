@@ -1,4 +1,4 @@
-import { solucoes } from "./data";
+import { solucoes, SolucoesEnum } from "./data";
 import { Card } from "./components/Card";
 import { Grid } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
@@ -11,7 +11,14 @@ export const Solucoes = () => {
           <Grid container spacing={2}>
             {solucoes?.map((solucao) => {
               return (
-                <Grid item xs={12} sm={12} md={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={solucao?.tipo === SolucoesEnum.MAIS ? 12 : 6}
+                  lg={solucao?.tipo === SolucoesEnum.MAIS ? 12 : 6}
+                  xl={4}
+                >
                   <Card {...solucao} />
                 </Grid>
               );

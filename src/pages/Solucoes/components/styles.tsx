@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Accordion, Box } from "@mui/material";
 
 export const Container = styled(Accordion)`
@@ -11,8 +11,6 @@ export const Container = styled(Accordion)`
   -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
-  height: 100%;
-
   border: 2px solid
     ${({ theme, expanded }) =>
       expanded ? theme?.palette?.secondary?.main : "#ececec"};
@@ -24,7 +22,10 @@ export const Container = styled(Accordion)`
   }
 
   svg {
-    color: ${({ theme }) => theme?.palette?.secondary?.main};
+    color: ${({ theme, expanded }) =>
+      expanded
+        ? theme?.palette?.secondary?.main
+        : theme?.palette?.common?.black};
   }
 `;
 
