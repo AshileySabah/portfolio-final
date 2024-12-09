@@ -6,12 +6,17 @@ import { useState } from "react";
 
 export type isFlippedNicho = Record<keyof typeof NichoHabilidadeEnum, boolean>;
 
+const defaultValuesIsFlipped = Object.keys(NichoHabilidadeEnum).reduce(
+  (acc, key) => {
+    acc[key as keyof typeof NichoHabilidadeEnum] = false;
+    return acc;
+  },
+  {} as isFlippedNicho,
+);
+
 export const Habilidades = () => {
   const [isFlipped, setIsFlipped] = useState<isFlippedNicho>(
-    Object.keys(NichoHabilidadeEnum).reduce((acc, key) => {
-      acc[key as keyof typeof NichoHabilidadeEnum] = false;
-      return acc;
-    }, {} as isFlippedNicho),
+    defaultValuesIsFlipped,
   );
 
   const handleFlip = (key: keyof typeof NichoHabilidadeEnum) => {
