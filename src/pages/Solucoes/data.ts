@@ -30,19 +30,14 @@ export const solucoes: Solucoes[] = [
       "Criação de apps para Android e iOS com funcionalidades personalizadas para diversos setores.",
   },
   {
-    tipo: "Automações",
+    tipo: "Automação",
     descricao:
       "Implementação de sistemas de automação para otimizar processos e aumentar a eficiência de negócios.",
   },
   {
-    tipo: "Dashboards",
+    tipo: "Dashboard",
     descricao:
       "Desenvolvimento de dashboards interativos e personalizados para monitoramento de dados e métricas de desempenho.",
-  },
-  {
-    tipo: "Trabalhos Acadêmicos",
-    descricao:
-      "Desenvolvimento de soluções digitais para trabalhos acadêmicos e projetos de TCC.",
   },
   {
     tipo: "Mais",

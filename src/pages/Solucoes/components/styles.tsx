@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Accordion, Box, Paper } from "@mui/material";
+import { Accordion, Box } from "@mui/material";
 
 export const Container = styled(Accordion)`
   border-radius: 5px;
@@ -11,13 +11,21 @@ export const Container = styled(Accordion)`
   -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
-  /* .active { */
-  border: 2px solid ${({ theme }) => theme?.palette?.secondary?.main};
+  height: 100%;
+
+  border: 2px solid
+    ${({ theme, expanded }) =>
+      expanded ? theme?.palette?.secondary?.main : "#ececec"};
+
+  span {
+    font-weight: bold;
+    color: ${({ theme, expanded }) =>
+      expanded ? theme?.palette?.secondary?.main : undefined};
+  }
 
   svg {
     color: ${({ theme }) => theme?.palette?.secondary?.main};
   }
-  /* } */
 `;
 
 export const ContainerSummary = styled(Box)`
@@ -28,5 +36,6 @@ export const ContainerSummary = styled(Box)`
 
   button {
     border-radius: 20px;
+    margin-right: 20px;
   }
 `;
