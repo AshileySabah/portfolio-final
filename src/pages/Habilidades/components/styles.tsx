@@ -20,7 +20,7 @@ export const Container = styled(Box)<CardProps>`
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
   width: 100%;
-  min-height: ${({ $isFlipped }) => ($isFlipped ? undefined : "200px")};
+  min-height: 200px;
   perspective: 1000px;
   cursor: pointer;
 
@@ -29,13 +29,17 @@ export const Container = styled(Box)<CardProps>`
   transform: ${({ $isFlipped }) =>
     $isFlipped ? "rotateY(-180deg)" : "rotateY(0deg)"};
   transition: transform 0.6s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const CardFace = styled("div")<CardProps>`
   position: ${({ $isFlipped }) => (!$isFlipped ? "absolute" : "relative")};
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: auto;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
