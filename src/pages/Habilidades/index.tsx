@@ -1,56 +1,12 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
-import { NichoHabilidadeEnum } from "./data";
-import { Card } from "./components/Card";
-import { useState } from "react";
-
-export type isFlippedNicho = Record<keyof typeof NichoHabilidadeEnum, boolean>;
-
-const defaultValuesIsFlipped = Object.keys(NichoHabilidadeEnum).reduce(
-  (acc, key) => {
-    acc[key as keyof typeof NichoHabilidadeEnum] = false;
-    return acc;
-  },
-  {} as isFlippedNicho,
-);
+import { HabilidadesDesktop } from "./Desktop";
 
 export const Habilidades = () => {
-  const [isFlipped, setIsFlipped] = useState<isFlippedNicho>(
-    defaultValuesIsFlipped,
-  );
-
-  const handleFlip = (key: keyof typeof NichoHabilidadeEnum) => {
-    setIsFlipped((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
-
   return (
     <PageLayout section="Tecnologias & Habilidades">
-      <Grid container spacing={2}>
-        {(
-          Object.keys(NichoHabilidadeEnum) as Array<
-            keyof typeof NichoHabilidadeEnum
-          >
-        ).map((nichoHabilidadeEnum) => (
-          <Grid
-            key={nichoHabilidadeEnum}
-            item
-            xs={12}
-            sm={isFlipped[nichoHabilidadeEnum] ? 12 : 6}
-            md={isFlipped[nichoHabilidadeEnum] ? 12 : 4}
-            lg={isFlipped[nichoHabilidadeEnum] ? 12 : 4}
-            xl={isFlipped[nichoHabilidadeEnum] ? 12 : 3}
-          >
-            <Card
-              nichoHabilidadeEnum={nichoHabilidadeEnum}
-              handleFlip={() => handleFlip(nichoHabilidadeEnum)}
-              isFlipped={isFlipped}
-            />
-          </Grid>
-        ))}
-      </Grid>
+      <Box sx={{ display: { xs: "block", md: "none" } }}>mobile</Box>
+      <Box sx={{ display: { xs: "none", md: "block" } }}>desktop</Box>
     </PageLayout>
   );
 };
