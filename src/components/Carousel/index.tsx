@@ -84,7 +84,9 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
         onTouchEnd={handleTouchEnd}
       >
         {list?.map((item, index) => (
-          <CarouselItemContainer key={index}>{item}</CarouselItemContainer>
+          <CarouselItemContainer key={index} $show={currentIndex === index}>
+            {item}
+          </CarouselItemContainer>
         ))}
       </CarouselAnimationContainer>
 

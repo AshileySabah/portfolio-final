@@ -15,6 +15,7 @@ export const Container = styled(Paper)`
   .card-cargo {
     font-weight: bold;
     text-transform: uppercase;
+    text-align: start;
   }
 
   .card-periodo {
@@ -63,7 +64,7 @@ export const Container = styled(Paper)`
     }
 
     ${theme.breakpoints.down("md")} {
-      width: 100%;
+      width: calc(100% - 20px);
     }
   `}
 `;

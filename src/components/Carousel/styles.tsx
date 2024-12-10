@@ -50,12 +50,17 @@ export const CarouselAnimationContainer = styled(
   transform: ${({ $currentIndex }) => `translateX(-${$currentIndex * 100}%)`};
 `;
 
-export const CarouselItemContainer = styled("div")`
+interface CarouselItemContainerProps {
+  $show: boolean;
+}
+
+export const CarouselItemContainer = styled("div")<CarouselItemContainerProps>`
   flex: 0 0 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: ${({ $show }) => ($show ? undefined : "hidden")};
 `;
 
 export const CarouselIndicatorsContainer = styled("div")`

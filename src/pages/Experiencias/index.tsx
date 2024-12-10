@@ -1,26 +1,17 @@
-import { experiencias } from "./data";
-import { Card } from "./components/Card";
-import { Timeline } from "@/components/Timeline";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
+import { ExperienciasDesktop } from "./Desktop";
+import { ExperienciasMobile } from "./Mobile";
 
 export const Experiencias = () => {
   return (
     <PageLayout section="Experiências">
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Timeline
-            list={experiencias?.map((experiencia) => {
-              return (
-                <Card
-                  key={`${experiencia?.empresa} - ${experiencia?.cargo}`}
-                  {...experiencia}
-                />
-              );
-            })}
-          />
-        </Grid>
-      </Grid>
+      <Box sx={{ display: { xs: "block", md: "none" } }}>
+        <ExperienciasMobile />
+      </Box>
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <ExperienciasDesktop />
+      </Box>
     </PageLayout>
   );
 };
