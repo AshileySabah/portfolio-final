@@ -17,10 +17,22 @@ export const CarouselContainer = styled("div")`
 
     &.left {
       left: 0px;
+      padding: 0 30px 0 0;
+
+      svg {
+        position: absolute;
+        left: -5px;
+      }
     }
 
     &.right {
       right: 0px;
+      padding: 0 0 0 30px;
+
+      svg {
+        position: absolute;
+        right: -5px;
+      }
     }
   }
 `;
