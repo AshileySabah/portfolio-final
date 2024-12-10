@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Box } from "@mui/material";
 
 interface CardProps {
@@ -33,6 +33,12 @@ export const Container = styled(Box)<CardProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    p.card-titulo {
+      color: #2ea103;
+    }
+  }
 `;
 
 export const CardFace = styled("div")<CardProps>`
@@ -47,18 +53,32 @@ export const CardFace = styled("div")<CardProps>`
 `;
 
 export const CardFront = styled(CardFace)`
-  font-weight: bold;
-  text-align: center;
-  display: ${({ $isFlipped }) => (!$isFlipped ? "flex" : "none")};
-
-  &:hover {
-    color: #2ea103;
+  p.card-titulo {
+    font-weight: bold;
+    text-align: center;
   }
+  display: ${({ $isFlipped }) => (!$isFlipped ? "flex" : "none")};
 `;
 
-export const CardBack = styled(CardFace)`
+export const CardBackContainer = styled(CardFace)`
   transform: rotateY(180deg);
   padding: 15px;
 
   flex-wrap: wrap;
+`;
+
+export const CardBack = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+
+  img {
+    height: 30px;
+  }
+
+  p {
+    text-align: center;
+  }
 `;

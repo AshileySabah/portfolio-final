@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { habilidadesPorNicho, NichoHabilidadeEnum } from "../data";
-import { Container, CardFront, CardBack } from "./styles";
+import { Container, CardFront, CardBackContainer, CardBack } from "./styles";
 import { isFlippedNicho } from "..";
+import { Typography } from "@mui/material";
 
 interface CardProps {
   nichoHabilidadeEnum: keyof typeof NichoHabilidadeEnum;
@@ -29,26 +30,20 @@ export const Card: React.FC<CardProps> = ({
       onClick={() => handleFlip(nichoHabilidadeEnum)}
     >
       <CardFront $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
-        {NichoHabilidadeEnum?.[nichoHabilidadeEnum]}
+        <Typography className="card-titulo ">
+          {NichoHabilidadeEnum?.[nichoHabilidadeEnum]}
+        </Typography>
       </CardFront>
-      <CardBack $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
+      <CardBackContainer $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
         {filteredHabilidades?.map(({ descricao, imagem }) => {
           return (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: 5,
-              }}
-            >
-              <img src={imagem} alt={`Ícone de ${descricao}`} height={30} />
-              <div style={{ textAlign: "center" }}>{descricao}</div>
-            </div>
+            <CardBack>
+              <img src={imagem} alt={`Ícone de ${descricao}`} />
+              <Typography>{descricao}</Typography>
+            </CardBack>
           );
         })}
-      </CardBack>
+      </CardBackContainer>
     </Container>
   );
 };
