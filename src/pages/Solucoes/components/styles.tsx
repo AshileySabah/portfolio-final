@@ -27,6 +27,12 @@ export const Container = styled(Accordion)`
         ? theme?.palette?.secondary?.main
         : theme?.palette?.common?.black};
   }
+
+  ${({ theme }) => css`
+    ${theme.breakpoints.down("md")} {
+      width: calc(100% - 20px);
+    }
+  `}
 `;
 
 export const ContainerSummary = styled(Box)`

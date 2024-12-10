@@ -1,32 +1,17 @@
-import { solucoes, SolucoesEnum } from "./data";
-import { Card } from "./components/Card";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { PageLayout } from "@/components/PageLayout";
+import { SolucoesDesktop } from "./Desktop";
+import { SolucoesMobile } from "./Mobile";
 
 export const Solucoes = () => {
   return (
     <PageLayout section="Soluções">
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Grid container spacing={2}>
-            {solucoes?.map((solucao) => {
-              return (
-                <Grid
-                  key={solucao?.tipo}
-                  item
-                  xs={12}
-                  sm={12}
-                  md={solucao?.tipo === SolucoesEnum.MAIS ? 12 : 6}
-                  lg={solucao?.tipo === SolucoesEnum.MAIS ? 12 : 6}
-                  xl={4}
-                >
-                  <Card {...solucao} />
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Grid>
-      </Grid>
+      <Box sx={{ display: { xs: "block", md: "none" } }}>
+        <SolucoesMobile />
+      </Box>
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <SolucoesDesktop />
+      </Box>
     </PageLayout>
   );
 };
