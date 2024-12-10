@@ -3,7 +3,10 @@ import { Carousel } from "@/components/Carousel";
 import { CardCarousel } from "./components/CardCarousel";
 
 export const HabilidadesMobile = () => {
-  const list = habilidadesPorNicho?.map((habilidadePorNicho) => {
+  const orderedHabilidades = habilidadesPorNicho?.sort((a, p) =>
+    a?.nicho?.localeCompare(p?.nicho),
+  );
+  const list = orderedHabilidades?.map((habilidadePorNicho) => {
     return <CardCarousel {...habilidadePorNicho} />;
   });
 
