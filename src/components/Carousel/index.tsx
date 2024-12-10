@@ -16,10 +16,18 @@ export const Carousel: React.FC<CarouselProps> = () => {
   const handleMouseUp = (e: React.MouseEvent) => {
     if (isDragging.current) {
       const deltaX = e.clientX - startX.current;
-      if (deltaX > 50 && currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-      } else if (deltaX < -50 && currentIndex < list.length - 1) {
-        setCurrentIndex(currentIndex + 1);
+      if (deltaX > 50) {
+        if (currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        } else {
+          setCurrentIndex(list.length - 1);
+        }
+      } else if (deltaX < -50) {
+        if (currentIndex < list.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        } else {
+          setCurrentIndex(0);
+        }
       }
     }
     isDragging.current = false;
@@ -47,7 +55,7 @@ export const Carousel: React.FC<CarouselProps> = () => {
         style={{
           display: "flex",
           width: "100%",
-          transition: "transform 0.3s ease-in-out",
+          // transition: "transform 0.3s ease-in-out",
           transform: `translateX(-${currentIndex * 100}%)`,
         }}
         onMouseDown={handleMouseDown}
