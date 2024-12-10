@@ -40,6 +40,7 @@ export const ContainerSummary = styled(Box)`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  text-align: start;
 
   button {
     border-radius: 20px;
