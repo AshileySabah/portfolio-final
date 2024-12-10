@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import { habilidadesPorNicho, NichoHabilidadeEnum } from "../data";
+import { habilidadesPorNicho, NichoHabilidadeEnum } from "../../data";
 import { Container, CardFront, CardBackContainer, CardBack } from "./styles";
-import { isFlippedNicho } from "..";
 import { Typography } from "@mui/material";
+import { isFlippedNicho } from "..";
 
 interface CardProps {
   nichoHabilidadeEnum: keyof typeof NichoHabilidadeEnum;

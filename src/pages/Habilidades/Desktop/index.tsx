@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
-import { NichoHabilidadeEnum } from "../data";
-import { Card } from "../components/Card";
+import { listNichoHabilidades, NichoHabilidadeEnum } from "../data";
+import { Card } from "./components/Card";
 import { useState } from "react";
 
 export type isFlippedNicho = Record<keyof typeof NichoHabilidadeEnum, boolean>;
@@ -24,10 +24,6 @@ export const HabilidadesDesktop = () => {
       [key]: !prev[key],
     }));
   };
-
-  const listNichoHabilidades = Object.keys(NichoHabilidadeEnum) as Array<
-    keyof typeof NichoHabilidadeEnum
-  >;
 
   return (
     <Grid container spacing={2}>

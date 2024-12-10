@@ -60,6 +60,10 @@ export enum NichoHabilidadeEnum {
   CLOUD_COMPUTING = "Cloud Computing",
 }
 
+export const listNichoHabilidades = Object?.keys(
+  NichoHabilidadeEnum,
+)?.sort() as Array<keyof typeof NichoHabilidadeEnum>;
+
 export interface HabilidadePorNicho {
   nicho: NichoHabilidadeEnum;
   habilidades: Habilidade[];
