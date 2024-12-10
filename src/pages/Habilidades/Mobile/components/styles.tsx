@@ -6,6 +6,7 @@ export const Container = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 
   p.titulo-nicho {
     margin-bottom: 30px;
@@ -21,7 +22,7 @@ export const ContainerListHabilidades = styled(Box)`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 `;
 
 export const ContainerImageDescription = styled(Box)`
@@ -30,6 +31,7 @@ export const ContainerImageDescription = styled(Box)`
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 100px;
 
   img {
     height: 30px;

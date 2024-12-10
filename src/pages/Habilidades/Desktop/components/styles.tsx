@@ -63,6 +63,7 @@ export const CardFront = styled(CardFace)`
 export const CardBackContainer = styled(CardFace)`
   transform: rotateY(180deg);
   padding: 15px;
+  gap: 15px;
 
   flex-wrap: wrap;
 `;
@@ -72,7 +73,7 @@ export const CardBack = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  max-width: 100px;
 
   img {
     height: 30px;

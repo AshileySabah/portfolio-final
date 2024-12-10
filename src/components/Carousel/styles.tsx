@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const CarouselContainer = styled("div")`
-  background: red;
+  /* background: red; */
   width: 100%;
-  height: 300px;
+  min-height: 250px;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -24,9 +24,9 @@ export const CarouselAnimationContainer = styled(
 `;
 
 export const CarouselItemContainer = styled("div")`
+  /* background: green; */
   flex: 0 0 100%;
-  background: green;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
