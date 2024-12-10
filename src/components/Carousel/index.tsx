@@ -1,4 +1,7 @@
 import React, { useState, useRef, ReactNode } from "react";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { Button } from "@mui/material";
 import {
   CarouselAnimationContainer,
   CarouselContainer,
@@ -76,8 +79,32 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
     }
   };
 
+  const nextItem = () => {
+    if (currentIndex < list.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setCurrentIndex(0);
+    }
+  };
+
+  const prevItem = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else {
+      setCurrentIndex(list.length - 1);
+    }
+  };
+
   return (
     <CarouselContainer>
+      <Button
+        className="carousel-button left"
+        color="secondary"
+        onClick={prevItem}
+      >
+        <ArrowBackIosNewIcon />
+      </Button>
+
       <CarouselAnimationContainer
         $currentIndex={currentIndex}
         onMouseDown={handleMouseDown}
@@ -92,6 +119,14 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
           <CarouselItemContainer key={index}>{item}</CarouselItemContainer>
         ))}
       </CarouselAnimationContainer>
+
+      <Button
+        className="carousel-button right"
+        color="secondary"
+        onClick={nextItem}
+      >
+        <ArrowForwardIosIcon />
+      </Button>
     </CarouselContainer>
   );
 };

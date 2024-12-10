@@ -8,6 +8,21 @@ export const CarouselContainer = styled("div")`
   position: relative;
   display: flex;
   align-items: center;
+
+  button.carousel-button {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    border-radius: 0;
+
+    &.left {
+      left: 0px;
+    }
+
+    &.right {
+      right: 0px;
+    }
+  }
 `;
 
 interface CarouselAnimationContainerProps {
