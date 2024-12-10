@@ -72,13 +72,13 @@ export const CarouselIndicatorsContainer = styled("div")`
 `;
 
 interface CarouselIndicatorProps {
-  active: boolean;
+  $active: boolean;
 }
 
 export const CarouselIndicator = styled("div")<CarouselIndicatorProps>`
   width: 20px;
   height: 5px;
   border: 1px solid #2ea103;
-  background-color: ${({ active }) => (active ? "#2ea103" : "transparent")};
+  background-color: ${({ $active }) => ($active ? "#2ea103" : "transparent")};
   cursor: pointer;
 `;

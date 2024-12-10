@@ -2,14 +2,14 @@ import { Box } from "@mui/material";
 import styled, { css } from "styled-components";
 
 interface ContainerProps {
-  containerSide: "left" | "right";
+  $containerSide: "left" | "right";
 }
 
 export const Container = styled(Box)<ContainerProps>`
   display: flex;
   align-items: center;
-  justify-content: ${({ containerSide }) =>
-    containerSide === "left" ? "flex-end" : "flex-start"};
+  justify-content: ${({ $containerSide }) =>
+    $containerSide === "left" ? "flex-end" : "flex-start"};
 
   ${({ theme }) => css`
     ${theme.breakpoints.down("md")} {

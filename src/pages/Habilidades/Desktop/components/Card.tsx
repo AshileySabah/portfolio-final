@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({
       <CardBackContainer $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
         {filteredHabilidades?.map(({ descricao, imagem }) => {
           return (
-            <CardBack>
+            <CardBack key={`${nichoHabilidadeEnum}-${descricao}`}>
               <img src={imagem} alt={`Ícone de ${descricao}`} />
               <Typography>{descricao}</Typography>
             </CardBack>

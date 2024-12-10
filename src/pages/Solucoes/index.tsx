@@ -12,6 +12,7 @@ export const Solucoes = () => {
             {solucoes?.map((solucao) => {
               return (
                 <Grid
+                  key={solucao?.tipo}
                   item
                   xs={12}
                   sm={12}

@@ -134,7 +134,7 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
         {list.map((_, index) => (
           <CarouselIndicator
             key={index}
-            active={index === currentIndex}
+            $active={index === currentIndex}
             onClick={() => setCurrentIndex(index)}
           />
         ))}

@@ -7,7 +7,9 @@ export const HabilidadesMobile = () => {
     a?.nicho?.localeCompare(p?.nicho),
   );
   const list = orderedHabilidades?.map((habilidadePorNicho) => {
-    return <CardCarousel {...habilidadePorNicho} />;
+    return (
+      <CardCarousel key={habilidadePorNicho?.nicho} {...habilidadePorNicho} />
+    );
   });
 
   return <Carousel list={list} />;

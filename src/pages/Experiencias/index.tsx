@@ -11,7 +11,12 @@ export const Experiencias = () => {
         <Grid item xs={12}>
           <Timeline
             list={experiencias?.map((experiencia) => {
-              return <Card {...experiencia} />;
+              return (
+                <Card
+                  key={`${experiencia?.empresa} - ${experiencia?.cargo}`}
+                  {...experiencia}
+                />
+              );
             })}
           />
         </Grid>

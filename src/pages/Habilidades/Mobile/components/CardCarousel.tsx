@@ -19,7 +19,7 @@ export const CardCarousel: React.FC<CardCarouselProps> = ({
       <ContainerListHabilidades>
         {habilidades?.map(({ imagem, descricao }) => {
           return (
-            <ContainerImageDescription>
+            <ContainerImageDescription key={`${nicho}-${descricao}`}>
               <img src={imagem} alt={`Ícone de ${descricao}`} />
               <Typography>{descricao}</Typography>
             </ContainerImageDescription>

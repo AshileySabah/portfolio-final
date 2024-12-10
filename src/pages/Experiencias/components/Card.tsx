@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = (experiencia) => {
       <Typography className="card-empresa">{experiencia?.empresa}</Typography>
       <ul>
         {experiencia?.atividades?.map((atividade) => {
-          return <li>{atividade}</li>;
+          return <li key={atividade}>{atividade}</li>;
         })}
       </ul>
     </Container>
