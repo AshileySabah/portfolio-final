@@ -45,6 +45,37 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
     }
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    isDragging.current = true;
+    startX.current = e?.touches?.[0]?.clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (isDragging?.current) {
+      const deltaX = e?.changedTouches?.[0]?.clientX - startX?.current;
+      if (deltaX > 50) {
+        if (currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        } else {
+          setCurrentIndex(list?.length - 1);
+        }
+      } else if (deltaX < -50) {
+        if (currentIndex < list?.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        } else {
+          setCurrentIndex(0);
+        }
+      }
+    }
+    isDragging.current = false;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging?.current) {
+      e?.preventDefault();
+    }
+  };
+
   return (
     <CarouselContainer>
       <CarouselAnimationContainer
@@ -53,6 +84,9 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {list?.map((item, index) => (
           <CarouselItemContainer key={index}>{item}</CarouselItemContainer>
