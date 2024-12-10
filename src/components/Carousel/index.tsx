@@ -1,4 +1,9 @@
 import React, { useState, useRef } from "react";
+import {
+  CarouselAnimationContainer,
+  CarouselContainer,
+  CarouselItemContainer,
+} from "./styles";
 
 interface CarouselProps {}
 
@@ -40,56 +45,18 @@ export const Carousel: React.FC<CarouselProps> = () => {
   };
 
   return (
-    <div
-      style={{
-        background: "red",
-        width: "100%",
-        height: 300,
-        overflow: "hidden",
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          // transition: "transform 0.3s ease-in-out",
-          transform: `translateX(-${currentIndex * 100}%)`,
-        }}
+    <CarouselContainer>
+      <CarouselAnimationContainer
+        $currentIndex={currentIndex}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
         {list.map((_, index) => (
-          <div
-            key={index}
-            style={{
-              flex: "0 0 100%",
-              background: "green",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                background: "pink",
-                width: "80%",
-                height: 200,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {index}
-            </div>
-          </div>
+          <CarouselItemContainer key={index}>{index}</CarouselItemContainer>
         ))}
-      </div>
-    </div>
+      </CarouselAnimationContainer>
+    </CarouselContainer>
   );
 };
