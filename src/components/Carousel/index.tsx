@@ -99,13 +99,13 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
 
   return (
     <CarouselContainer>
-      <Button
+      {/* <Button
         className="carousel-button left"
         color="secondary"
         onClick={prevItem}
       >
         <ArrowBackIosNewIcon />
-      </Button>
+      </Button> */}
 
       <CarouselAnimationContainer
         $currentIndex={currentIndex}
@@ -122,13 +122,13 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
         ))}
       </CarouselAnimationContainer>
 
-      <Button
+      {/* <Button
         className="carousel-button right"
         color="secondary"
         onClick={nextItem}
       >
         <ArrowForwardIosIcon />
-      </Button>
+      </Button> */}
 
       <CarouselIndicatorsContainer>
         {list.map((_, index) => (
