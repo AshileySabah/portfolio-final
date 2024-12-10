@@ -1,8 +1,12 @@
 import { Typography } from "@mui/material";
 import styled, { css } from "styled-components";
 
-export const Title = styled(Typography)`
+export const Container = styled(Typography)`
   text-align: center;
+
+  span {
+    color: #2ea103;
+  }
 
   ${({ theme }) => css`
     ${theme.breakpoints.down("md")} {

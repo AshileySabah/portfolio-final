@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { ReactNode } from "react";
-import { Title } from "./styles";
+import { Title } from "./components/Title";
 
 interface PageLayoutProps {
   section: string;
@@ -14,7 +14,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
   return (
     <Grid container spacing={2} p={3}>
       <Grid item xs={12} mb={2}>
-        <Title>{section}</Title>
+        <Title {...{ section }} />
       </Grid>
       <Grid item xs={12}>
         {children}
