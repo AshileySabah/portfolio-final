@@ -1,7 +1,4 @@
-import React, { useState, useRef, ReactNode } from "react";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import { Button } from "@mui/material";
+import React, { useState, useRef, ReactNode, useEffect } from "react";
 import {
   CarouselAnimationContainer,
   CarouselContainer,
@@ -19,6 +16,21 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
   const startX = useRef(0);
   const isDragging = useRef(false);
 
+  const nextItem = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % list.length);
+  };
+
+  const prevItem = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? list.length - 1 : prevIndex - 1,
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextItem, 1500);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
     startX.current = e?.clientX;
@@ -27,19 +39,8 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
   const handleMouseUp = (e: React.MouseEvent) => {
     if (isDragging?.current) {
       const deltaX = e?.clientX - startX?.current;
-      if (deltaX > 50) {
-        if (currentIndex > 0) {
-          setCurrentIndex(currentIndex - 1);
-        } else {
-          setCurrentIndex(list?.length - 1);
-        }
-      } else if (deltaX < -50) {
-        if (currentIndex < list?.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else {
-          setCurrentIndex(0);
-        }
-      }
+      if (deltaX > 50) prevItem();
+      else if (deltaX < -50) nextItem();
     }
     isDragging.current = false;
   };
@@ -58,19 +59,8 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (isDragging?.current) {
       const deltaX = e?.changedTouches?.[0]?.clientX - startX?.current;
-      if (deltaX > 50) {
-        if (currentIndex > 0) {
-          setCurrentIndex(currentIndex - 1);
-        } else {
-          setCurrentIndex(list?.length - 1);
-        }
-      } else if (deltaX < -50) {
-        if (currentIndex < list?.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else {
-          setCurrentIndex(0);
-        }
-      }
+      if (deltaX > 50) prevItem();
+      else if (deltaX < -50) nextItem();
     }
     isDragging.current = false;
   };
@@ -81,32 +71,8 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
     }
   };
 
-  const nextItem = () => {
-    if (currentIndex < list.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
-  };
-
-  const prevItem = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(list.length - 1);
-    }
-  };
-
   return (
     <CarouselContainer>
-      {/* <Button
-        className="carousel-button left"
-        color="secondary"
-        onClick={prevItem}
-      >
-        <ArrowBackIosNewIcon />
-      </Button> */}
-
       <CarouselAnimationContainer
         $currentIndex={currentIndex}
         onMouseDown={handleMouseDown}
@@ -122,16 +88,8 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
         ))}
       </CarouselAnimationContainer>
 
-      {/* <Button
-        className="carousel-button right"
-        color="secondary"
-        onClick={nextItem}
-      >
-        <ArrowForwardIosIcon />
-      </Button> */}
-
       <CarouselIndicatorsContainer>
-        {list.map((_, index) => (
+        {list?.map((_, index) => (
           <CarouselIndicator
             key={index}
             $active={index === currentIndex}
