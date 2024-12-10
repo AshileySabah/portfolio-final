@@ -6,6 +6,8 @@ import {
   CarouselAnimationContainer,
   CarouselContainer,
   CarouselItemContainer,
+  CarouselIndicatorsContainer,
+  CarouselIndicator,
 } from "./styles";
 
 interface CarouselProps {
@@ -127,6 +129,16 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
       >
         <ArrowForwardIosIcon />
       </Button>
+
+      <CarouselIndicatorsContainer>
+        {list.map((_, index) => (
+          <CarouselIndicator
+            key={index}
+            active={index === currentIndex}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </CarouselIndicatorsContainer>
     </CarouselContainer>
   );
 };

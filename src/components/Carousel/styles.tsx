@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const CarouselContainer = styled("div")`
-  /* background: red; */
   width: 100%;
   min-height: 250px;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
 
   button.carousel-button {
     position: absolute;
     z-index: 1;
-    height: 100%;
+    height: calc(100% - 30px);
     border-radius: 0;
 
     &.left {
@@ -51,10 +51,34 @@ export const CarouselAnimationContainer = styled(
 `;
 
 export const CarouselItemContainer = styled("div")`
-  /* background: green; */
   flex: 0 0 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const CarouselIndicatorsContainer = styled("div")`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  padding: 5px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+`;
+
+interface CarouselIndicatorProps {
+  active: boolean;
+}
+
+export const CarouselIndicator = styled("div")<CarouselIndicatorProps>`
+  width: 20px;
+  height: 5px;
+  border: 1px solid #2ea103;
+  background-color: ${({ active }) => (active ? "#2ea103" : "transparent")};
+  cursor: pointer;
 `;
