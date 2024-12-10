@@ -28,8 +28,10 @@ export const Card: React.FC<CardProps> = ({
       $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}
       onClick={() => handleFlip(nichoHabilidadeEnum)}
     >
-      <CardFront>{NichoHabilidadeEnum?.[nichoHabilidadeEnum]}</CardFront>
-      <CardBack>
+      <CardFront $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
+        {NichoHabilidadeEnum?.[nichoHabilidadeEnum]}
+      </CardFront>
+      <CardBack $isFlipped={isFlipped?.[nichoHabilidadeEnum] === true}>
         {filteredHabilidades?.map(({ descricao, imagem }) => {
           return (
             <div
@@ -42,7 +44,7 @@ export const Card: React.FC<CardProps> = ({
               }}
             >
               <img src={imagem} alt={`Ícone de ${descricao}`} height={30} />
-              <div>{descricao}</div>
+              <div style={{ textAlign: "center" }}>{descricao}</div>
             </div>
           );
         })}

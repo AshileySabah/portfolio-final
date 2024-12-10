@@ -37,7 +37,7 @@ export const Habilidades = () => {
           <Grid
             key={nichoHabilidadeEnum}
             item
-            xs={isFlipped[nichoHabilidadeEnum] ? 12 : 6}
+            xs={12}
             sm={isFlipped[nichoHabilidadeEnum] ? 12 : 6}
             md={isFlipped[nichoHabilidadeEnum] ? 12 : 4}
             lg={isFlipped[nichoHabilidadeEnum] ? 12 : 4}

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Box } from "@mui/material";
 
-interface ContainerProps {
+interface CardProps {
   $isFlipped: boolean;
 }
 
-export const Container = styled(Box)<ContainerProps>`
+export const Container = styled(Box)<CardProps>`
   border-radius: 5px;
   border: 2px solid #ececec;
   background-color: ${({ theme }) => theme?.palette?.common?.white};
@@ -20,7 +20,7 @@ export const Container = styled(Box)<ContainerProps>`
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
   width: 100%;
-  height: 200px;
+  min-height: ${({ $isFlipped }) => ($isFlipped ? undefined : "200px")};
   perspective: 1000px;
   cursor: pointer;
 
@@ -31,11 +31,11 @@ export const Container = styled(Box)<ContainerProps>`
   transition: transform 0.6s ease;
 `;
 
-export const CardFace = styled.div`
+export const CardFace = styled("div")<CardProps>`
+  position: ${({ $isFlipped }) => (!$isFlipped ? "absolute" : "relative")};
   border-radius: 5px;
   width: 100%;
   height: 100%;
-  position: absolute;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
@@ -44,6 +44,8 @@ export const CardFace = styled.div`
 
 export const CardFront = styled(CardFace)`
   font-weight: bold;
+  text-align: center;
+  display: ${({ $isFlipped }) => (!$isFlipped ? "flex" : "none")};
 
   &:hover {
     color: #2ea103;
@@ -52,8 +54,7 @@ export const CardFront = styled(CardFace)`
 
 export const CardBack = styled(CardFace)`
   transform: rotateY(180deg);
-
   padding: 15px;
+
   flex-wrap: wrap;
-  justify-content: space-evenly;
 `;
