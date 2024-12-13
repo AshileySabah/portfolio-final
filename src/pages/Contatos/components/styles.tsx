@@ -23,6 +23,15 @@ export const Container = styled("a")`
   }
 
   ${({ theme }) => css`
+    ${theme.breakpoints.up("md")} {
+      width: 100%;
+      padding: 8.5px 0;
+
+      img {
+        height: 35px;
+      }
+    }
+
     ${theme.breakpoints.down("md")} {
       width: 100%;
       padding: 15px 0;
