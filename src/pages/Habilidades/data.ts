@@ -13,7 +13,7 @@ import node from "../../assets/node.png";
 import java from "../../assets/java.png";
 import css from "../../assets/css.png";
 import sass from "../../assets/sass.png";
-import styledComponents from "../../assets/styled-components.png";
+import styledComponents from "../../assets/styledComponents.png";
 import materialUI from "../../assets/material-ui.png";
 import tailwind from "../../assets/tailwind.png";
 import bootstrap from "../../assets/bootstrap.png";
