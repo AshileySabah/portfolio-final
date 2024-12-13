@@ -13,6 +13,7 @@ export const Container = styled(Paper)`
   box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
 
   display: flex;
+
   gap: 15px;
 
   p.card-cliente {
@@ -28,21 +29,14 @@ export const Container = styled(Paper)`
     border-radius: 5px;
   }
 
-  /* ${({ theme }) => css`
-    ${theme.breakpoints.up("md")} {
-      width: 400px;
-    }
+  ${({ theme }) => css`
+    ${theme.breakpoints.down("sm")} {
+      flex-direction: column;
 
-    ${theme.breakpoints.up("lg")} {
-      width: 450px;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-
-    ${theme.breakpoints.up("xl")} {
-      width: 550px;
-    }
-
-    ${theme.breakpoints.down("md")} {
-      width: calc(100% - 20px);
-    }
-  `} */
+  `}
 `;
