@@ -1,4 +1,5 @@
 import React, { useState, useRef, ReactNode, useEffect } from "react";
+import { Grid } from "@mui/material";
 import {
   CarouselAnimationContainer,
   CarouselContainer,
@@ -9,9 +10,13 @@ import {
 
 interface CarouselProps {
   list: ReactNode[];
+  useGridContainer?: boolean;
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ list }) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  list,
+  useGridContainer,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const startX = useRef(0);
   const isDragging = useRef(false);
@@ -85,7 +90,13 @@ export const Carousel: React.FC<CarouselProps> = ({ list }) => {
       >
         {list?.map((item, index) => (
           <CarouselItemContainer key={index} $show={currentIndex === index}>
-            {item}
+            {useGridContainer ? (
+              <Grid container spacing={2} justifyContent="center">
+                {item}
+              </Grid>
+            ) : (
+              item
+            )}
           </CarouselItemContainer>
         ))}
       </CarouselAnimationContainer>
