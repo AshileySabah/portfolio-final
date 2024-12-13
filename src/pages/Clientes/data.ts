@@ -28,6 +28,7 @@ export const solucoes: Solucao[] = [
     cliente: "Dra. Alanis Barros",
     imagem: draAlanisBarros,
     servico: "Agenda e Dashboard Financeiro",
-    descricao: "",
+    descricao:
+      "Com esse novo sistema, resolvi meus problemas de estoque e financeiros, agradeço por entender tão facilmente o que eu precisava",
   },
 ];
