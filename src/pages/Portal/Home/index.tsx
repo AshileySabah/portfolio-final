@@ -1,4 +1,5 @@
 import { Clientes } from "@/pages/Clientes";
+import { Contatos } from "@/pages/Contatos";
 import { Experiencias } from "@/pages/Experiencias";
 import { Habilidades } from "@/pages/Habilidades";
 import { Solucoes } from "@/pages/Solucoes";
@@ -12,6 +13,7 @@ export const Home: React.FC = () => {
         <Experiencias />
         <Solucoes />
         <Clientes />
+        <Contatos />
       </Grid>
     </Grid>
   );
