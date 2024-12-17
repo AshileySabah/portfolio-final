@@ -40,52 +40,40 @@ export const TypingEffectContainer = styled(Box)`
   }
 `;
 
-export const InfoContainer = styled(Box)`
-  text-align: justify;
-
+export const TerminalContainer = styled(Box)`
   p {
+    margin: 0;
     margin-bottom: 5px;
+    color: #2ea103;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
   }
 
-  .pergunta {
-    font-size: 25px;
-
-    .codigo-animation {
-      /* letter-spacing: 5px; */
-      /* background-color: #f2f2f2;
-      padding: 2px 5px;
-      border-radius: 4px; */
-      /* font-family: "Courier New", Courier, monospace; */
-    }
+  span {
+    color: white;
   }
+`;
 
-  /* p {
-    &:nth-child(2n + 1) {
-      text-align: end;
-    } */
-  /*
-    ${({ theme }) => css`
-    ${theme.breakpoints.down("md")} {
-      font-weight: bold !important;
-    }
-  `};
+export const TerminalToolbar = styled(Box)`
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 
-    ${({ theme }) => css`
-    ${theme.breakpoints.up("xs")} {
-      font-size: 20px !important;
-    }
-  `};
+  & > div {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+  }
+`;
 
-    ${({ theme }) => css`
-    ${theme.breakpoints.up("md")} {
-      font-size: 30px !important;
-    }
-  `};
-
-    ${({ theme }) => css`
-    ${theme.breakpoints.up("lg")} {
-      font-size: 40px !important;
-    }
-  `}; */
-  /* } */
+export const TerminalContent = styled(Box)`
+  background-color: black;
+  padding: 5px 10px;
+  color: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 `;
