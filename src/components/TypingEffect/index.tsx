@@ -1,5 +1,6 @@
 import { Typography, TypographyProps } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { Cursor } from "./styles";
 
 interface TypingEffectProps extends TypographyProps {
   words: string[];
@@ -18,13 +19,14 @@ export const TypingEffect: React.FC<TypingEffectProps> = ({
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [blinkCursor, setBlinkCursor] = useState(false);
+  const [blinkCount, setBlinkCount] = useState(0);
 
   useEffect(() => {
     if (!words || words?.length === 0) return;
 
     const currentWord = words[currentWordIndex];
-
-    let typingTimeout;
+    let typingTimeout: NodeJS.Timeout;
 
     if (isDeleting) {
       typingTimeout = setTimeout(() => {
@@ -38,7 +40,8 @@ export const TypingEffect: React.FC<TypingEffectProps> = ({
       typingTimeout = setTimeout(() => {
         setCurrentText((prev) => currentWord?.slice(0, prev?.length + 1));
         if (currentText === currentWord) {
-          setTimeout(() => setIsDeleting(true), delay);
+          setBlinkCount(0);
+          setBlinkCursor(true);
         }
       }, typingSpeed);
     }
@@ -54,5 +57,26 @@ export const TypingEffect: React.FC<TypingEffectProps> = ({
     delay,
   ]);
 
-  return <Typography {...typographyProps}>{currentText}</Typography>;
+  useEffect(() => {
+    let blinkTimeout: NodeJS.Timeout;
+    if (blinkCursor) {
+      blinkTimeout = setTimeout(() => {
+        setBlinkCount((prev) => prev + 1);
+        if (blinkCount >= 3) {
+          setBlinkCursor(false);
+          setTimeout(() => setIsDeleting(true), delay);
+        }
+      }, 400);
+    }
+    return () => clearTimeout(blinkTimeout);
+  }, [blinkCursor, blinkCount, delay]);
+
+  return (
+    <Typography {...typographyProps}>
+      {currentText}
+      <Cursor $visibility={blinkCursor && blinkCount % 2 === 0}>|</Cursor>
+    </Typography>
+  );
 };
+
+export default TypingEffect;
