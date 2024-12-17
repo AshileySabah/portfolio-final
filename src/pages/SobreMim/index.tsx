@@ -3,8 +3,8 @@ import { Grid, Typography } from "@mui/material";
 import ProfilePhoto from "../../assets/profilePhoto.svg?react";
 import { TypingEffect } from "@/components/TypingEffect";
 import {
+  Card,
   PhotoContainer,
-  TerminalContainer,
   TerminalContent,
   TerminalToolbar,
   TypingEffectContainer,
@@ -21,7 +21,7 @@ export const SobreMim = () => {
             />
           </TypingEffectContainer>
 
-          <TerminalContainer>
+          <Card>
             <TerminalToolbar>
               <div style={{ background: "#ff625a" }} />
               <div style={{ background: "#ffbd2e" }} />
@@ -29,34 +29,34 @@ export const SobreMim = () => {
             </TerminalToolbar>
 
             <TerminalContent>
-              <Typography fontFamily="monospace">
+              <Typography>
                 @Quer transformar suas ideias em código?:<span> SIM</span>
               </Typography>
-              <Typography fontFamily="monospace">
+              <Typography>
                 @Até aquelas mais malucas, impossíveis ou fora da caixinha?:
                 <span> SIM</span>
               </Typography>
               <div className="response">
-                <Typography fontFamily="monospace">
+                <Typography>
                   <span>{`>> `}</span>Então você encontrou a Dev certa!
                 </Typography>
-                <Typography fontFamily="monospace">
+                <Typography>
                   <span>{`>> `}</span>Desafios viram soluções com qualidade,
                   agilidade e um toque de criatividade.
                 </Typography>
-                <Typography fontFamily="monospace">
+                <Typography>
                   <span>{`>> `}</span>Problemas? Eu resolvo. Código? Eu entrego.
                 </Typography>
-                <Typography fontFamily="monospace">
+                <Typography>
                   <span>{`>> `}</span>Desafio dado é desafio cumprido com
                   excelência.
                 </Typography>
-                <Typography fontFamily="monospace">
+                <Typography>
                   <span>{`>> `}</span>Sem enrolação, sem drama. É só chamar!
                 </Typography>
               </div>
             </TerminalContent>
-          </TerminalContainer>
+          </Card>
         </Grid>
 
         <Grid item xs={12} sm={12} md={6}>
