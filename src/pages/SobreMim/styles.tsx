@@ -45,8 +45,9 @@ export const TerminalContainer = styled(Box)`
     margin: 0;
     margin-bottom: 5px;
     color: #2ea103;
-    font-family: "Courier New", Courier, monospace;
     font-weight: bold;
+
+    font-size: 20px !important;
   }
 
   span {
@@ -76,4 +77,14 @@ export const TerminalContent = styled(Box)`
   color: white;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+
+  .response {
+    span {
+      color: #2ea103;
+    }
+
+    p {
+      color: #cccccc;
+    }
+  }
 `;
