@@ -51,6 +51,18 @@ export const TerminalToolbar = styled(Box)`
     width: 15px;
     height: 15px;
     border-radius: 15px;
+
+    &:nth-child(1) {
+      background: #ff625a;
+    }
+
+    &:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    &:nth-child(3) {
+      background: #28ca40;
+    }
   }
 `;
 
@@ -74,7 +86,7 @@ export const TerminalContent = styled(Box)`
   }
 
   span {
-    color: #cccccc;
+    color: #b8b8b8;
   }
 
   .response {
@@ -83,7 +95,7 @@ export const TerminalContent = styled(Box)`
     }
 
     p {
-      color: #cccccc;
+      color: #b8b8b8;
     }
   }
 `;

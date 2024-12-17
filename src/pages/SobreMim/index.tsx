@@ -14,7 +14,17 @@ export const SobreMim = () => {
   return (
     <PageLayout section="Sobre Mim">
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <TypingEffectContainer mb={2}>
             <TypingEffect
               words={["Program", "Dev Front", "Dev Back", "Pau para toda obra"]}
@@ -23,9 +33,9 @@ export const SobreMim = () => {
 
           <Card>
             <TerminalToolbar>
-              <div style={{ background: "#ff625a" }} />
-              <div style={{ background: "#ffbd2e" }} />
-              <div style={{ background: "#28ca40" }} />
+              <div />
+              <div />
+              <div />
             </TerminalToolbar>
 
             <TerminalContent>
