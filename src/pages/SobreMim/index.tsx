@@ -69,7 +69,17 @@ export const SobreMim = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <PhotoContainer>
             <ProfilePhoto />
           </PhotoContainer>

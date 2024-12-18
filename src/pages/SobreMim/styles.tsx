@@ -5,7 +5,6 @@ export const Card = styled(Paper)`
   border-radius: 5px;
   border: 2px solid #ececec;
   background-color: ${({ theme }) => theme?.palette?.common?.white};
-  text-align: justify;
 
   -webkit-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
   -moz-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
@@ -81,8 +80,31 @@ export const TerminalContent = styled(Box)`
     color: #2ea103;
     font-weight: bold;
 
-    font-size: 20px !important;
     font-family: monospace;
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("xs")} {
+        font-size: 18px !important;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("sm")} {
+        font-size: 19px !important;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("md")} {
+        font-size: 19px !important;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("lg")} {
+        font-size: 20px !important;
+      }
+    `};
   }
 
   span {
