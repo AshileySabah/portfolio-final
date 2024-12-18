@@ -12,7 +12,7 @@ import {
 
 export const SobreMim = () => {
   return (
-    <PageLayout section="Sobre Mim">
+    <PageLayout>
       <Grid container spacing={2}>
         <Grid
           item

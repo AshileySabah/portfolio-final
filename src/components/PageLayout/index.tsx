@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Title } from "./components/Title";
 
 interface PageLayoutProps {
-  section: string;
+  section?: string;
   children: ReactNode;
 }
 
@@ -13,9 +13,11 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
 }) => {
   return (
     <Grid container spacing={2} p={3}>
-      <Grid item xs={12} mb={2}>
-        <Title {...{ section }} />
-      </Grid>
+      {section && (
+        <Grid item xs={12} mb={2}>
+          <Title {...{ section }} />
+        </Grid>
+      )}
       <Grid item xs={12}>
         {children}
       </Grid>
