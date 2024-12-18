@@ -26,16 +26,21 @@ export const HabilidadesDesktop = () => {
   };
 
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      spacing={2}
+      style={{ display: "flex", alignItems: "stretch" }}
+    >
       {listNichoHabilidades?.map((nichoHabilidadeEnum) => (
         <Grid
           key={nichoHabilidadeEnum}
           item
           xs={12}
-          sm={isFlipped[nichoHabilidadeEnum] ? 12 : 6}
-          md={isFlipped[nichoHabilidadeEnum] ? 12 : 4}
-          lg={isFlipped[nichoHabilidadeEnum] ? 12 : 4}
-          xl={isFlipped[nichoHabilidadeEnum] ? 12 : 3}
+          sm={6}
+          md={4}
+          lg={4}
+          xl={3}
+          style={{ display: "flex" }}
         >
           <Card
             nichoHabilidadeEnum={nichoHabilidadeEnum}

@@ -25,6 +25,12 @@ export const Container = styled(Box)<CardProps>`
   cursor: pointer;
 
   position: relative;
+
+  /* width: ${({ $isFlipped }) => ($isFlipped ? "100%" : "100%")};
+  position: ${({ $isFlipped }) => ($isFlipped ? "absolute" : "relative")};
+  z-index: ${({ $isFlipped }) => ($isFlipped ? 10 : 1)};
+  left: ${({ $isFlipped }) => ($isFlipped ? "25px" : undefined)}; */
+
   transform-style: preserve-3d;
   transform: ${({ $isFlipped }) =>
     $isFlipped ? "rotateY(-180deg)" : "rotateY(0deg)"};
