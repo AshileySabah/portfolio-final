@@ -7,7 +7,7 @@ export const Links = () => {
   return (
     <ContainerLinks>
       {contatos?.map((contato) => {
-        return <Card {...contato} />;
+        return <Card key={contato?.type} {...contato} />;
       })}
     </ContainerLinks>
   );

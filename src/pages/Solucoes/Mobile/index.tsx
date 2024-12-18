@@ -11,7 +11,7 @@ export const SolucoesMobile = () => {
     return (
       <Container>
         {solucoes?.map((solucao) => {
-          return <Card {...solucao} />;
+          return <Card key={solucao?.tipo} {...solucao} />;
         })}
       </Container>
     );
