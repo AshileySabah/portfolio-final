@@ -12,7 +12,15 @@ import {
 
 export const SobreMim = () => {
   return (
-    <PageLayout>
+    <PageLayout
+      customSection={
+        <TypingEffectContainer>
+          <TypingEffect
+            words={["Program", "Dev Front", "Dev Back", "Pau para toda obra"]}
+          />
+        </TypingEffectContainer>
+      }
+    >
       <Grid container spacing={2}>
         <Grid
           item
@@ -25,12 +33,6 @@ export const SobreMim = () => {
             justifyContent: "center",
           }}
         >
-          <TypingEffectContainer mb={2}>
-            <TypingEffect
-              words={["Program", "Dev Front", "Dev Back", "Pau para toda obra"]}
-            />
-          </TypingEffectContainer>
-
           <Card>
             <TerminalToolbar>
               <div />

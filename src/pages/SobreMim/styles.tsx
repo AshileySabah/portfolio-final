@@ -12,31 +12,15 @@ export const Card = styled(Paper)`
 `;
 
 export const TypingEffectContainer = styled(Box)`
-  p {
-    ${({ theme }) => css`
-      ${theme.breakpoints.down("md")} {
-        font-weight: bold !important;
-      }
-    `};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    ${({ theme }) => css`
-      ${theme.breakpoints.up("xs")} {
-        font-size: 20px !important;
-      }
-    `};
-
-    ${({ theme }) => css`
-      ${theme.breakpoints.up("md")} {
-        font-size: 30px !important;
-      }
-    `};
-
-    ${({ theme }) => css`
-      ${theme.breakpoints.up("lg")} {
-        font-size: 40px !important;
-      }
-    `};
-  }
+  ${({ theme }) => css`
+    ${theme.breakpoints.down("355")} {
+      min-height: 70px;
+    }
+  `};
 `;
 
 export const TerminalToolbar = styled(Box)`
