@@ -1,23 +1,37 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { ReactNode } from "react";
-import { Title } from "./components/Title";
+import TypingEffect from "../TypingEffect";
+import { Container } from "./styles";
 
 interface PageLayoutProps {
   section?: string;
   children: ReactNode;
+  customSection?: ReactNode;
 }
 
 export const PageLayout: React.FC<PageLayoutProps> = ({
-  section,
+  section = "",
   children,
+  customSection,
 }) => {
+  const [before, after] = section?.split("&");
+
   return (
     <Grid container spacing={2} p={3}>
-      {section && (
-        <Grid item xs={12} mb={2}>
-          <Title {...{ section }} />
-        </Grid>
-      )}
+      <Container>
+        {section && section?.includes("&") ? (
+          <Typography>
+            {before}
+            <span>&</span>
+            {after}
+          </Typography>
+        ) : (
+          <Typography>{section}</Typography>
+        )}
+
+        {customSection}
+      </Container>
+
       <Grid item xs={12}>
         {children}
       </Grid>
