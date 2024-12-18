@@ -11,11 +11,13 @@ import {
 interface CarouselProps {
   list: ReactNode[];
   useGridContainer?: boolean;
+  activeCarousel?: boolean;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
   list,
   useGridContainer,
+  activeCarousel = true,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const startX = useRef(0);
@@ -32,9 +34,11 @@ export const Carousel: React.FC<CarouselProps> = ({
   };
 
   useEffect(() => {
-    const interval = setInterval(nextItem, 1500);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+    if (activeCarousel) {
+      const interval = setInterval(nextItem, 1500);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, activeCarousel]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
