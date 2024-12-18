@@ -4,6 +4,7 @@ import ProfilePhoto from "../../assets/profilePhoto.svg?react";
 import { TypingEffect } from "@/components/TypingEffect";
 import {
   Card,
+  GridItem,
   PhotoContainer,
   TerminalContent,
   TerminalToolbar,
@@ -22,17 +23,7 @@ export const SobreMim = () => {
       }
     >
       <Grid container spacing={2}>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
+        <GridItem item xs={12} sm={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
           <Card>
             <TerminalToolbar>
               <div />
@@ -69,19 +60,9 @@ export const SobreMim = () => {
               </div>
             </TerminalContent>
           </Card>
-        </Grid>
+        </GridItem>
 
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
+        <Grid item xs={12} sm={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
           <PhotoContainer>
             <ProfilePhoto />
           </PhotoContainer>

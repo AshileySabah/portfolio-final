@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Box, Paper } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 
 export const Card = styled(Paper)`
   border-radius: 5px;
@@ -108,11 +108,42 @@ export const TerminalContent = styled(Box)`
 
 export const PhotoContainer = styled(Box)`
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
 
   svg {
     fill: #2ea103;
-    width: 80%;
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.down("sm")} {
+        width: 100%;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("sm")} {
+        width: 60%;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("md")} {
+        width: 100%;
+      }
+    `};
+
+    ${({ theme }) => css`
+      ${theme.breakpoints.up("lg")} {
+        width: 90%;
+      }
+    `};
   }
+`;
+
+export const GridItem = styled(Grid)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
