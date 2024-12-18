@@ -6,8 +6,11 @@ import { Grid, useMediaQuery } from "@mui/material";
 import { splitArrayConverter } from "@/utils/converters/splitArrayConverter";
 import { theme } from "@/components/BaseLayout/Theme/styles";
 import { useMemo } from "react";
+import { CarouselLayout } from "@/components/Carousel/Layout";
+import { useStore } from "./useStore";
 
 export const Clientes = () => {
+  const { activeCarousel, setActiveCarousel } = useStore();
   const isScreenSizeUpLg = useMediaQuery(theme?.breakpoints?.up("lg"));
 
   const list = useMemo(() => {
@@ -40,7 +43,16 @@ export const Clientes = () => {
 
   return (
     <PageLayout section="Clientes">
-      <Carousel list={list} useGridContainer />
+      <CarouselLayout
+        activeCarousel={activeCarousel}
+        setActiveCarousel={setActiveCarousel}
+      >
+        <Carousel
+          list={list}
+          activeCarousel={activeCarousel}
+          useGridContainer
+        />
+      </CarouselLayout>
     </PageLayout>
   );
 };
