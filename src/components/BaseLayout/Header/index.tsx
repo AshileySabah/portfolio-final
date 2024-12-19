@@ -1,5 +1,5 @@
-import { Menu } from "./styles";
+import { Menu } from "../Menu";
 
 export const Header = () => {
-  return <Menu position="relative">Header</Menu>;
+  return <Menu />;
 };
