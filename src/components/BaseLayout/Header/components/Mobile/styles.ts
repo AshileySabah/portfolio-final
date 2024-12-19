@@ -1,5 +1,5 @@
+import { styled } from "@mui/system";
 import Button from "@mui/material/Button";
-import styled from "styled-components";
 
 export const ButtonLinkMobile = styled(Button)`
   text-decoration: none;
