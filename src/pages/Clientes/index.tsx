@@ -19,11 +19,16 @@ export const Clientes = () => {
       return splitArrayConverter(solucoes, 2)?.map((solucoesSplitted) => {
         return solucoesSplitted?.map((solucao) => {
           return (
-            <Grid item xs={12} sm={12} md={8} lg={8} xl={6}>
-              <Card
-                key={`${solucao?.cliente}-${solucao?.cliente}`}
-                {...solucao}
-              />
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={8}
+              lg={8}
+              xl={6}
+              key={`${solucao?.cliente}-${solucao?.servico}`}
+            >
+              <Card {...solucao} />
             </Grid>
           );
         });
@@ -31,11 +36,16 @@ export const Clientes = () => {
     } else {
       return solucoes?.map((solucao) => {
         return (
-          <Grid item xs={12} sm={12} md={8} lg={8} xl={6}>
-            <Card
-              key={`${solucao?.cliente}-${solucao?.cliente}`}
-              {...solucao}
-            />
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={8}
+            lg={8}
+            xl={6}
+            key={`${solucao?.cliente}-${solucao?.servico}`}
+          >
+            <Card {...solucao} />
           </Grid>
         );
       });
