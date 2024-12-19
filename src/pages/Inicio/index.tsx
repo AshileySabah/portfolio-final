@@ -1,6 +1,6 @@
 import { PageLayout } from "@/components/PageLayout";
 import { Grid, Typography } from "@mui/material";
-import ProfilePhoto from "../../assets/profilePhoto.svg?react";
+import ProfilePhoto from "../../assets/profile/profilePhoto.svg?react";
 import { TypingEffect } from "@/components/TypingEffect";
 import {
   Card,
@@ -11,7 +11,7 @@ import {
   TypingEffectContainer,
 } from "./styles";
 
-export const SobreMim = () => {
+export const Inicio = () => {
   return (
     <PageLayout
       customSection={
