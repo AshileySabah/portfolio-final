@@ -3,7 +3,7 @@ import { Accordion, Box } from "@mui/material";
 
 export const Container = styled(Accordion)`
   border-radius: 5px;
-  border: 2px solid #ececec;
+  border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
   background-color: ${({ theme }) => theme?.palette?.common?.white};
   text-align: justify;
 
@@ -13,19 +13,17 @@ export const Container = styled(Accordion)`
 
   border: 2px solid
     ${({ theme, expanded }) =>
-      expanded ? theme?.palette?.secondary?.main : "#ececec"};
+      expanded ? theme?.palette?.primary?.main : theme?.palette?.grey?.[50]};
 
   span {
     font-weight: bold;
     color: ${({ theme, expanded }) =>
-      expanded ? theme?.palette?.secondary?.main : undefined};
+      expanded ? theme?.palette?.primary?.main : undefined};
   }
 
   svg {
     color: ${({ theme, expanded }) =>
-      expanded
-        ? theme?.palette?.secondary?.main
-        : theme?.palette?.common?.black};
+      expanded ? theme?.palette?.primary?.main : theme?.palette?.common?.black};
   }
 
   ${({ theme }) => css`

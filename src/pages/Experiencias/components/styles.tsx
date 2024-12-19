@@ -4,7 +4,7 @@ import { Paper } from "@mui/material";
 export const Container = styled(Paper)`
   padding: 15px;
   border-radius: 5px;
-  border: 2px solid #ececec;
+  border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
   background-color: ${({ theme }) => theme?.palette?.common?.white};
   text-align: justify;
 
@@ -43,7 +43,7 @@ export const Container = styled(Paper)`
         top: 0.5em;
         width: 7px;
         height: 7px;
-        border: 1px solid #2ea103;
+        border: 1px solid ${({ theme }) => theme?.palette?.primary?.main};
         border-radius: 50%;
         background-color: transparent;
       }

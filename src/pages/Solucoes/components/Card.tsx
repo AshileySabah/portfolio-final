@@ -36,7 +36,7 @@ export const Card: React.FC<CardProps> = ({ tipo, descricao }) => {
       >
         <ContainerSummary>
           <span>{tipo}</span>
-          <Button variant="outlined" color="secondary" onClick={handleOrcar}>
+          <Button variant="outlined" onClick={handleOrcar}>
             Orçar
           </Button>
         </ContainerSummary>

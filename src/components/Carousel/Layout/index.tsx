@@ -23,7 +23,6 @@ export const CarouselLayout: React.FC<CarouselLayoutProps> = ({
           checked={activeCarousel}
           onChange={handleChange}
           inputProps={{ "aria-label": "controlled" }}
-          color="secondary"
         />
       </Grid>
       <Grid item xs={12}>

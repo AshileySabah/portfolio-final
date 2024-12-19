@@ -23,7 +23,7 @@ export const Formulario = () => {
         />
       </Grid>
       <Grid item xs={12}>
-        <Button variant="contained" color="secondary" fullWidth>
+        <Button variant="contained" fullWidth>
           Enviar
         </Button>
       </Grid>

@@ -3,7 +3,7 @@ import { Box, Grid, Paper } from "@mui/material";
 
 export const Card = styled(Paper)`
   border-radius: 5px;
-  border: 2px solid #ececec;
+  border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
   background-color: ${({ theme }) => theme?.palette?.common?.white};
 
   -webkit-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
@@ -24,7 +24,7 @@ export const TypingEffectContainer = styled(Box)`
 `;
 
 export const TerminalToolbar = styled(Box)`
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme?.palette?.grey?.[100]};
   display: flex;
   align-items: center;
   gap: 10px;
@@ -36,15 +36,15 @@ export const TerminalToolbar = styled(Box)`
     border-radius: 15px;
 
     &:nth-child(1) {
-      background: #ff625a;
+      background: ${({ theme }) => theme?.palette?.error?.light};
     }
 
     &:nth-child(2) {
-      background: #ffbd2e;
+      background: ${({ theme }) => theme?.palette?.warning?.light};
     }
 
     &:nth-child(3) {
-      background: #28ca40;
+      background: ${({ theme }) => theme?.palette?.success?.light};
     }
   }
 `;
@@ -53,15 +53,10 @@ export const TerminalContent = styled(Box)`
   padding: 5px 10px;
   color: white;
 
-  border-color: #f2f2f2;
-  border-width: 1px;
-
-  border: 1px solid #f2f2f2;
-
   p {
     margin: 0;
     margin-bottom: 5px;
-    color: #2ea103;
+    color: ${({ theme }) => theme?.palette?.primary?.main};
     font-weight: bold;
 
     font-family: monospace;
@@ -92,16 +87,16 @@ export const TerminalContent = styled(Box)`
   }
 
   span {
-    color: #b8b8b8;
+    color: ${({ theme }) => theme?.palette?.grey?.A400};
   }
 
   .response {
     span {
-      color: #2ea103;
+      color: ${({ theme }) => theme?.palette?.primary?.main};
     }
 
     p {
-      color: #b8b8b8;
+      color: ${({ theme }) => theme?.palette?.grey?.A400};
     }
   }
 `;
@@ -113,7 +108,7 @@ export const PhotoContainer = styled(Box)`
   align-items: center;
 
   svg {
-    fill: #2ea103;
+    fill: ${({ theme }) => theme?.palette?.primary?.main};
 
     ${({ theme }) => css`
       ${theme.breakpoints.down("sm")} {

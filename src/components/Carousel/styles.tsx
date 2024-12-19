@@ -83,7 +83,8 @@ interface CarouselIndicatorProps {
 export const CarouselIndicator = styled("div")<CarouselIndicatorProps>`
   width: 20px;
   height: 5px;
-  border: 1px solid #2ea103;
-  background-color: ${({ $active }) => ($active ? "#2ea103" : "transparent")};
+  border: 1px solid ${({ theme }) => theme?.palette?.primary?.main};
+  background-color: ${({ $active, theme }) =>
+    $active ? theme?.palette?.primary?.main : "transparent"};
   cursor: pointer;
 `;

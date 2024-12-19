@@ -22,7 +22,7 @@ export const Container = styled(Box)<ContainerProps>`
 export const CardArm = styled(Box)`
   height: 1px;
   width: 30px;
-  background-color: ${({ theme }) => theme?.palette?.secondary?.main};
+  background-color: ${({ theme }) => theme?.palette?.primary?.main};
 
   ${({ theme }) => css`
     ${theme.breakpoints.down("md")} {

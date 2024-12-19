@@ -5,6 +5,6 @@ interface CursorProps {
 }
 
 export const Cursor = styled("span")<CursorProps>`
-  color: #2ea103;
+  color: ${({ theme }) => theme?.palette?.primary?.main};
   visibility: ${({ $visibility }) => ($visibility ? "visible" : "hidden")};
 `;

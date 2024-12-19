@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled("a")`
   border-radius: 5px;
-  border: 2px solid #ececec;
+  border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
   background-color: ${({ theme }) => theme?.palette?.common?.white};
   background-color: transparent;
   text-align: justify;

@@ -6,7 +6,7 @@ export const Container = styled(Box)`
   width: 100%;
 
   span {
-    color: #2ea103;
+    color: ${({ theme }) => theme?.palette?.primary?.main};
   }
 
   p,

@@ -23,7 +23,10 @@ const BackdropLoaderProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <BackdropLoaderContext.Provider value={BackdropLoaderValue}>
       <Backdrop
-        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 999 }}
+        sx={{
+          color: (theme) => theme?.palette?.common?.white,
+          zIndex: (theme) => theme.zIndex.drawer + 999,
+        }}
         open={loading}
       >
         <CircularProgress color="inherit" />
