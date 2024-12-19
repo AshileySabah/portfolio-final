@@ -1,4 +1,4 @@
-import { Tooltip, useMediaQuery } from "@mui/material";
+import { Paper, Tooltip, useMediaQuery } from "@mui/material";
 import { Contato } from "../data";
 import { Container } from "./styles";
 import { useTheme } from "@/hooks/Theme";

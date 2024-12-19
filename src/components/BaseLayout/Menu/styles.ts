@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import styled from "styled-components";
 
-export const MenuShadow = styled(Box)`
+export const MenuShadow = styled(Paper)`
   -webkit-box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 1);
   box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 1);

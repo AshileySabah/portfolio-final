@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 export const Container = styled("a")`
   border-radius: 5px;
   border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
-  background-color: ${({ theme }) => theme?.palette?.common?.white};
-  background-color: transparent;
+  background-color: ${({ theme }) => theme?.palette?.background?.paper};
   text-align: justify;
 
   -webkit-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
@@ -49,6 +48,9 @@ export const Container = styled("a")`
     ${theme.breakpoints.down("300")} {
       width: auto;
       padding: 0;
+      background-color: ${({ theme }) => theme?.palette?.background?.default};
+      border: none;
+      box-shadow: none !important;
     }
   `}
 `;

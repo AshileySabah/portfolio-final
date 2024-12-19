@@ -32,7 +32,7 @@ export const lightThemePalette: PaletteOptions = {
     contrastText: "#000",
   },
   secondary: {
-    main: "#085c8c",
+    main: "#1879b0",
     contrastText: "#000",
   },
   background: {
@@ -44,16 +44,16 @@ export const lightThemePalette: PaletteOptions = {
 
 export const darkThemePalette: PaletteOptions = {
   primary: {
-    main: "#085c8c",
-    contrastText: "#000",
+    main: "#1879b0",
+    contrastText: "#fff",
   },
   secondary: {
     main: "#2ea103",
     contrastText: "#000",
   },
   background: {
-    paper: "#121212",
-    default: "#333333",
+    paper: "#333333",
+    default: "#121212",
   },
   ...commonThemePalette,
 };

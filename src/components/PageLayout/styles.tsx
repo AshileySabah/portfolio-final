@@ -9,6 +9,10 @@ export const Container = styled(Box)`
     color: ${({ theme }) => theme?.palette?.primary?.main};
   }
 
+  p {
+    color: ${({ theme }) => theme?.palette?.text?.primary};
+  }
+
   p,
   span {
     ${({ theme }) => css`

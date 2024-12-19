@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 
 interface CardProps {
   $isFlipped: boolean;
 }
 
-export const Container = styled(Box)<CardProps>`
+export const Container = styled(Paper)<CardProps>`
   border-radius: 5px;
   border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
-  background-color: ${({ theme }) => theme?.palette?.common?.white};
+  background-color: ${({ theme }) => theme?.palette?.background?.default};
 
   &:hover {
     border: ${({ $isFlipped, theme }) =>

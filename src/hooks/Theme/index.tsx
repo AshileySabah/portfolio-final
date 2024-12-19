@@ -62,7 +62,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [mode, toggleThemeMode]);
 
   const mainColor = theme?.palette?.primary?.main;
-  const background = theme?.palette?.background?.paper;
+  const background = theme?.palette?.background?.default;
 
   return (
     <ThemeContext.Provider value={values}>

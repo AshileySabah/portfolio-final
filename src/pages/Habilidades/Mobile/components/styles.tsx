@@ -7,6 +7,7 @@ export const Container = styled(Box)`
   justify-content: center;
   align-items: center;
   padding: 15px;
+  color: ${({ theme }) => theme?.palette?.text?.primary};
 
   p.titulo-nicho {
     margin-bottom: 30px;

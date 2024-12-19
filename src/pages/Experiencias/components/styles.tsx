@@ -5,7 +5,7 @@ export const Container = styled(Paper)`
   padding: 15px;
   border-radius: 5px;
   border: 2px solid ${({ theme }) => theme?.palette?.grey?.[50]};
-  background-color: ${({ theme }) => theme?.palette?.common?.white};
+  background-color: ${({ theme }) => theme?.palette?.background?.default};
   text-align: justify;
 
   -webkit-box-shadow: 4px 6px 5px 3px rgba(0, 0, 0, 0.3) !important;
