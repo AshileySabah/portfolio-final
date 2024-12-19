@@ -1,11 +1,12 @@
 import { Tooltip, useMediaQuery } from "@mui/material";
 import { Contato } from "../data";
 import { Container } from "./styles";
-import { theme } from "@/components/BaseLayout/Theme/styles";
+import { useTheme } from "@/hooks/Theme";
 
 interface CardProps extends Contato {}
 
 export const Card: React.FC<CardProps> = (contato) => {
+  const { theme } = useTheme();
   const isScreenSizeUpMd = useMediaQuery(theme?.breakpoints?.up("md"));
 
   return (
