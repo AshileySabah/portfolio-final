@@ -1,6 +1,6 @@
-import proezaContabil from "../../assets/proezaContabil.png";
-import aCasaCapimLimao from "../../assets/aCasaCapimLimao.png";
-import draAlanisBarros from "../../assets/draAlanisBarros.png";
+import proezaContabil from "../../assets/clientes/proezaContabil.png";
+import aCasaCapimLimao from "../../assets/clientes/aCasaCapimLimao.png";
+import draAlanisBarros from "../../assets/clientes/draAlanisBarros.png";
 
 export interface Solucao {
   cliente: string;

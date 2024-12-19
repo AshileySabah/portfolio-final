@@ -1,7 +1,7 @@
-import whatsapp from "../../assets/whatsapp.png";
-import email from "../../assets/email.png";
-import github from "../../assets/github.png";
-import linkedin from "../../assets/linkedin.png";
+import whatsapp from "../../assets/contatos/whatsapp.png";
+import email from "../../assets/contatos/email.png";
+import github from "../../assets/contatos/github.png";
+import linkedin from "../../assets/contatos/linkedin.png";
 
 export interface Contato {
   type: string;
