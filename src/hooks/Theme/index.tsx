@@ -36,7 +36,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     if (getSessionMode) {
       return getSessionMode;
     }
-    return "dark";
+    return "light";
   });
 
   useEffect(() => {
