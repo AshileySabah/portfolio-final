@@ -8,16 +8,7 @@ export const BaseLayout = () => {
   return (
     <ThemeProvider>
       <Header />
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        paddingX={{ xs: 3, sm: 3, md: 3, lg: 20, xl: 30 }}
-        paddingY={3}
-      >
+      <Box>
         <Outlet />
       </Box>
       <Footer />
