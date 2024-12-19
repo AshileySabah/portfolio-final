@@ -1,9 +1,9 @@
 import { useState, MouseEvent } from "react";
 import { Box, IconButton, Menu as MenuUI } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { pages } from "./data";
-import { ToggleThemeButton } from "./ToggleThemeButton";
-import { Logo } from "./Logo";
+import { pages } from "../../data";
+import { ToggleThemeButton } from "../ToggleThemeButton";
+import { Logo } from "../Logo";
 import { ButtonLinkMobile } from "./styles";
 
 export const MenuMobile = () => {

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import { pages } from "./data";
-import { ToggleThemeButton } from "./ToggleThemeButton";
-import { Logo } from "./Logo";
+import { pages } from "../../data";
+import { ToggleThemeButton } from "../ToggleThemeButton";
+import { Logo } from "../Logo";
 import { ButtonLinkDesktop } from "./styles";
 
 export const MenuDesktop = () => {
@@ -10,7 +10,7 @@ export const MenuDesktop = () => {
       <Logo />
 
       <Box display="flex">
-        {pages.map(({ name, route }) => (
+        {pages?.map(({ name, route }) => (
           <ButtonLinkDesktop key={name} href={route} variant="text">
             {name}
           </ButtonLinkDesktop>
